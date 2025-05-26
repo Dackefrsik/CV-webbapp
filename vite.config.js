@@ -8,6 +8,6 @@ export default defineConfig({
     host: '0.0.0.0',  // Detta gör servern tillgänglig på alla nätverksinterfaces
     port: 5173,        // Om du vill kan du specificera porten här
   },
-  base: '/daniel-portfolio/'
+  base: '/CV-webbapp/'
 })
 

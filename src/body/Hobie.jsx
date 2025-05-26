@@ -24,11 +24,11 @@ function Hobie({ observer}) {
         <div id="Hobie" className="container-fluid">
             <div className="row">
                 <div className="col-12 col-md-4 bgProfilePicture d-flex justify-content-center">
-                    <p className="textColor">Hobies</p>
+                    <p className="textColor">Hobbies</p>
                 </div>
                 <div className="col-md-1"></div>
                 <div className="col-12 col-md-7 d-flex justify-content-center d-md-block">
-                    <p className="mt-2 imageHobieToRight fs-3">Resa</p>
+                    <p className="mt-2 imageHobieToRight fs-3">Travel</p>
                 </div>
             </div>
             <div className="row">
@@ -61,7 +61,7 @@ function Hobie({ observer}) {
                     <img src={Nyhaven} alt="Nyhavn" className="w-100 h-100 w-md-75 h-md-75 imageHobieToRight" />
                 </div>
                 <div className="col-md-2 d-flex align-items-center">
-                    <p className="imageHobieToRight">Nyhavn Kopenhagen 2023</p>
+                    <p className="imageHobieToRight">Nyhavn Copenhagen 2023</p>
                 </div>
             </div>
             <div className="row">

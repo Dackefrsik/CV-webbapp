@@ -51,13 +51,13 @@ function Navbar() {
                                         <a className="active m-2" aria-current="page" href="#Home" onClick={closeMenue}>Home</a>
                                     </li>
                                     <li>
-                                        <a className="m-2" href="#Tekniks" onClick={closeMenue}>ProgrammingTekniks</a>
+                                        <a className="m-2" href="#Tekniks" onClick={closeMenue}>Programming Techniques</a>
                                     </li>
                                     <li>
                                         <a className="m-2" href="#Projects" onClick={closeMenue}>Projects</a>
                                     </li>
                                     <li>
-                                        <a className="m-2" href="#Hobie" onClick={closeMenue}>Hobies</a>
+                                        <a className="m-2" href="#Hobie" onClick={closeMenue}>Hobbies</a>
                                     </li>
                                 </ul>
                             </div>

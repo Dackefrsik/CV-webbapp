@@ -1,6 +1,6 @@
 {
   "name": "cv-webbapp",
-  "homepage": "https://Dackefrsik.github.io/daniel-portfolio",
+  "homepage": "https://Dackefrsik.github.io/CV-webbapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeplay": "npm run build",
+    "predeploy": "npm run build",
     "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
