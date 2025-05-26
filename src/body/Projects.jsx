@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
 //Komponent som visar projekt
-function Projects({observer}) {
+function Projects({ observer }) {
 
     /*#region useefect som kör animationer*/
     useEffect(() => {
@@ -11,7 +11,7 @@ function Projects({observer}) {
 
 
         //IntersectObserver som visar bilderna genom att sätta opaciteten till 1
-        
+
 
         //Lopar igenom alla bilder och observerar dem
         imgRef.forEach(img => {
@@ -104,9 +104,9 @@ function Projects({observer}) {
                 <div className="col-4 bgProfilePicture"></div>
                 <div className="col-1 bgProfilePicture"></div>
                 <div className="col-12 col-md-block col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
-                <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="mb-2">
-                            <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
-                        </a>
+                    <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="mb-2">
+                        <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
+                    </a>
                 </div>
             </div>
         </div>

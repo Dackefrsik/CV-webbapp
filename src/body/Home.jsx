@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import profilePicture from "../assets/Profilbild.jpg"
 
 
-function Home({observer, observer2}) {
+function Home({ observer, observer2 }) {
     const [currentDate, setCurrentDate] = useState("");
     const imgRef = useRef(null);
 
@@ -63,17 +63,17 @@ function Home({observer, observer2}) {
             imgObserver.observe(img);
         });
 
-        const handelResize = () => {setCurrentWidth(window.innerWidth)}
+        const handelResize = () => { setCurrentWidth(window.innerWidth) }
 
-        window.addEventListener("resize",  handelResize)
+        window.addEventListener("resize", handelResize)
 
         const currentProjectRef = document.querySelector(".currentProject");
 
-        if(currentProjectRef){
-            if(windowWidth <= 425){
+        if (currentProjectRef) {
+            if (windowWidth <= 425) {
                 observer2.observe(currentProjectRef);
             }
-            else if(currentProjectRef.classList.contains("opacityAfter")){
+            else if (currentProjectRef.classList.contains("opacityAfter")) {
                 currentProjectRef.classList.remove("opacityAfter");
             }
         }
@@ -163,12 +163,12 @@ function Home({observer, observer2}) {
                     <div className="col-1 d-none d-sm-block"></div>
                     <div className="col-12 col-md-3 backgorund-sm">
                         <div className="d-flex justify-content-center flex-wrap d-md-block">
-                            <p className="textColor-sm textColor-md">Current Project </p>
+                            <p className="textColor-sm textColor-md">Current/ Latest Project </p>
                         </div>
                         <div className="bgProfilePicture mb-3 rounded-1">
                             <div className="d-flex justify-content-center">
-                                <a href="https://github.com/Dackefrsik/CV-webbapp" target="_blank" className="currentProject ">
-                                    <img alt="CV-webbapp" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=CV-webbapp&theme=cobalt2" className="img-fluid"></img>
+                                <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="currentProject">
+                                    <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
                                 </a>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="bi bi-arrow-clockwise d-none d-md-flex align-itmes-start arrow" viewBox="0 0 16 16">
