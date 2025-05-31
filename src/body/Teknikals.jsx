@@ -21,9 +21,6 @@ function Teknikals({ observer }) {
             <div className="row">
                 <div className="col-12 col-md-4 bgProfilePicture d-flex flex-col justify-content-center mb-2 mb-md-0">
                     <p className="textColor d-sm-none d-md-block">Programming Techniques</p>
-
-                    <p className="textColor d-md-none">Programming</p>
-                    <p className="textColor d-md-none">Techniques</p>
                 </div>
                 <div className="col-md-1"></div>
             </div>

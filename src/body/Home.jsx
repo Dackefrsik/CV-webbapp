@@ -163,7 +163,8 @@ function Home({ observer, observer2 }) {
                     <div className="col-1 d-none d-sm-block"></div>
                     <div className="col-12 col-md-3 backgorund-sm">
                         <div className="d-flex justify-content-center flex-wrap d-md-block">
-                            <p className="textColor-sm textColor-md">Current/ Latest Project </p>
+                            <p className="textColor-sm textColor-md d-md-none">Current/ Latest Project </p>
+                            <p className="textColor-sm textColor-md d-none d-md-block">Current Project </p>
                         </div>
                         <div className="bgProfilePicture mb-3 rounded-1">
                             <div className="d-flex justify-content-center">
