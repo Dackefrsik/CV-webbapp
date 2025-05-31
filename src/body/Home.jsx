@@ -86,7 +86,7 @@ function Home({ observer, observer2 }) {
                 <div className="row">
                     <div className="col-12 col-md-4 bgProfilePicture">
                         <div className="row">
-                            <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-md-5">
+                            <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5">
                                 <img src={profilePicture} alt="ProfilePicture" className=" rotate w-75 h-75 profilePicture " ref={imgRef} />
                             </div>
                         </div>

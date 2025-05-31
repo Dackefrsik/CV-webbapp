@@ -49,11 +49,12 @@ body {
   nav {
     background-color: var(--Primary);
   }
-
-  .custom-toggler {
+.custom-toggler {
     display: none;
   }
 }
+
+
 
 nav a {
   color: var(--Secondary);
@@ -66,7 +67,8 @@ nav a:hover {
   border-bottom: 3px solid var(--Accentfärg);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
+
   nav {
     margin-top: 50vh;
   }
@@ -81,11 +83,6 @@ nav a:hover {
     display: block;
   }
 
-  /* .border-right-radius {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  } */
-
   .navbar-nav {
     background-color: var(--Primary);
   }
@@ -96,10 +93,16 @@ nav a:hover {
 /*#region Grund postitionen på sträcken i hamburgarmenyn*/
 .navbar-collapse {
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
   transform: translateX(100%);
   transition: 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform-origin: right center;
+}
+
+@media (min-width: 767px) {
+  .navbar-collapse{
+    transform: translateX(0);
+  }
 }
 
 .navbar-toggler-top,
@@ -201,7 +204,7 @@ nav a:hover {
   }
 }
 
-@media (min-width: 425px){
+@media (max-width: 500px){
   .profile-margin{
     margin-top: 0px;
   }
