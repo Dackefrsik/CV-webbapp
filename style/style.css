@@ -29,13 +29,14 @@
 /*#region generell css *, html, body*/
 * {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 body {
@@ -113,6 +114,7 @@ nav a:hover {
   display: block;
   transition: 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transform-origin: center;
+  border-radius: 3px;
 }
 
 .navbar-collapse.show {
@@ -409,6 +411,13 @@ footer {
 
 .bi-arrow-up{
   fill: var(--Primary);
+  margin: 0.5rem;
+}
+
+.bi-arrow-up path {
+  stroke: var(--Primary); /* Använder samma färg som fyllningen */
+  stroke-width: 2px; /* Experimentera med detta värde för att hitta önskad tjocklek */
+  
 }
 
 /*#endregion*/
