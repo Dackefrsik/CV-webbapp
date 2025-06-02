@@ -11,7 +11,7 @@ function Body() {
       const scrollHeight = document.documentElement.scrollHeight;
       const innerHeight = window.innerHeight;
     
-        console.log({ windowHeight, scrollHeight, innerHeight });
+        //console.log({ windowHeight, scrollHeight, innerHeight });
 
 
 

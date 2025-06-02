@@ -6,6 +6,7 @@ function Navbar() {
 
     const [isRounded, setRounded] = useState(true); // State för höger border-radius (fixad namngivning)
     const [isMenuOpen, setMenuOpen] = useState(false); // Kontrollerar om menyn är öppen (fixad namngivning)
+    const [showBurger, changeBurgerVisibility] = useState(false);
 
     // State för hamburgarknappens synlighet baserat på skrollposition
     // VIKTIGT: Sätts till 'false' från början så att knappen är DOLD vid laddning av sidan.
@@ -18,7 +19,9 @@ function Navbar() {
         if (menuButton.current) {
             // Uppdaterar aria-expanded baserat på det nya tillståndet för menyn
             menuButton.current.setAttribute("aria-expanded", String(!isMenuOpen));
+
         }
+        changeBurgerVisibility(true);
     };
 
     // Stänger menyn när man klickar utanför (eller via meny-länkar)
@@ -31,6 +34,8 @@ function Navbar() {
                 if (menuButton.current) {
                     menuButton.current.setAttribute("aria-expanded", "false");
                 }
+                changeBurgerVisibility(true);
+
             }
         };
 
@@ -57,17 +62,20 @@ function Navbar() {
             const isSmallScreen = window.matchMedia("(max-width: 767.98px)").matches;
 
             // FELSÖKNING: Logga dessa värden för att se vad som händer
-            console.log("--- Scroll Event ---");
+            /* console.log("--- Scroll Event ---");
             console.log("windowHeight:", windowHeight);
             console.log("scrollThreshold:", scrollThreshold);
             console.log("isSmallScreen:", isSmallScreen);
-            console.log("isHamburgerVisibleByScroll (before logic):", isHamburgerVisibleByScroll);
+            console.log("isHamburgerVisibleByScroll (before logic):", isHamburgerVisibleByScroll); */
 
 
             // Applicera skroll-logiken ENDAST på små skärmar
             if (isSmallScreen) {
                 if (windowHeight > scrollThreshold) {
+                    console.log("ses")
                     setHamburgerVisibleByScroll(true); // Visa hamburgaren
+                    document.querySelector('.hamburger-hidden-on-scroll').classList.add('show');
+
                 } else {
                     setHamburgerVisibleByScroll(false); // Dölj hamburgaren
                     // Stäng även menyn om den var öppen och vi skrollar tillbaka upp
@@ -78,12 +86,14 @@ function Navbar() {
                             menuButton.current.setAttribute("aria-expanded", "false");
                         }
                     }
+                    document.querySelector('.hamburger-hidden-on-scroll').classList.remove('show');
+
                 }
             } else {
                 // På stora skärmar ska hamburgarknappen alltid vara synlig, oavsett skroll
                 setHamburgerVisibleByScroll(true);
             }
-            console.log("isHamburgerVisibleByScroll (after logic):", isHamburgerVisibleByScroll);
+            //console.log("isHamburgerVisibleByScroll (after logic):", isHamburgerVisibleByScroll);
         };
 
         // Lägg till eventlyssnaren när komponenten mountas
@@ -102,15 +112,22 @@ function Navbar() {
                         <button
                             // VIKTIG KORRIGERING: HÄR APPLICERAS KLASSEN FÖR ATT DÖLJA/VISA KNAPPEN
                             // Använder '!' för att dölja när 'isHamburgerVisibleByScroll' är false
-                            className={`ms-5 ps-1 pe-1 pt-1 pb-1 custom-toggler ${isRounded ? "border-right-radius" : ""} ${!isHamburgerVisibleByScroll ? "hamburger-hidden-on-scroll" : ""}`}
+                            className={`ms-5 ps-1 pe-1 pt-1 pb-1 custom-toggler ${isRounded ? "border-right-radius" : ""} 
+                            hamburger-hidden-on-scroll 
+                            ${(isHamburgerVisibleByScroll || isMenuOpen) ? "show" : "hide"}
+                            `}
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup"
                             aria-controls="navbarNavAltMarkup"
-                            aria-expanded={isMenuOpen} // Koppla till isMenuOpen state
+                            //aria-expanded={isMenuOpen} // Koppla till isMenuOpen state
                             aria-label="Toggle navigation"
                             ref={menuButton}
-                            onClick={toggleMenu}> {/* Använd den kombinerade toggleMenu-funktionen */}
+                            onClick={toggleMenu}>
+                            {/* Använd den kombinerade toggleMenu-funktionen */}
+
+
+
                             <span className="navbar-toggler-top"></span>
                             <span className="navbar-toggler-middle"></span>
                             <span className="navbar-toggler-bottom"></span>
@@ -134,7 +151,7 @@ function Navbar() {
                                     </li>
                                 </ul>
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
             </nav>
