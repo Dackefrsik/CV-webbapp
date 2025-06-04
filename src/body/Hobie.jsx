@@ -14,9 +14,6 @@ function Hobie({ observer}) {
         imgContent.forEach(img => {
             observer.observe(img);
         })
-
-        
-
     })
 
 
