@@ -108,7 +108,7 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-md fixed-top">
                 <div className="w-100 me-2 d-md-block d-flex justify-content-end">
-                    <div className="d-flex align-items-start justify-content-end">
+                    <div className="d-flex align-items-start justify-content-end ">
                         <button
                             // VIKTIG KORRIGERING: HÄR APPLICERAS KLASSEN FÖR ATT DÖLJA/VISA KNAPPEN
                             // Använder '!' för att dölja när 'isHamburgerVisibleByScroll' är false

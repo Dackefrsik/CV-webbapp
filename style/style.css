@@ -72,7 +72,12 @@ nav a:hover {
     margin-top: 50vh;
   }
 
+  .buttonDiv{
+    background-color: var(--Accentfärg);
+  }
+
   .custom-toggler {
+    position: relative;
     width: 4rem;
     height: 2.8rem;
     background-color: var(--Accentfärg);
@@ -80,6 +85,7 @@ nav a:hover {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     display: block;
+    overflow: hidden;
   }
 
   .navbar-nav {
@@ -115,6 +121,8 @@ nav a:hover {
   transition: 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transform-origin: center;
   border-radius: 3px;
+    left: 0.25rem; /* Centrera strecken inom knappen */
+  right: 0.25rem;
 }
 
 .navbar-collapse.show {

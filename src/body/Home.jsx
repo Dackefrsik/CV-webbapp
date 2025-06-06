@@ -85,9 +85,9 @@ function Home({ observer, observer2 }) {
             <div className="container-fluid" id="Home">
                 <div className="row">
                     <div className="col-12 col-md-4 bgProfilePicture">
-                        <div className="row">
+                        <div className="row p-lg-3">
                             <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5 ">
-                                <img src={profilePicture} alt="ProfilePicture" className=" rotate w-75 h-75 profilePicture mt-lg-5" ref={imgRef} />
+                                <img src={profilePicture} alt="ProfilePicture" className=" rotate w-50 h-75 profilePicture mt-lg-5" ref={imgRef} />
                             </div>
                         </div>
                     </div>
