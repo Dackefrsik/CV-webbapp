@@ -85,6 +85,31 @@ function Projects({ observer }) {
             <div className="row">
                 <div className="col-4 bgProfilePicture"></div>
                 <div className="col-1 bgProfilePicture"></div>
+                <div className="d-none d-md-block col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                        alt="React Native"
+                        className="imgProjects programingImagePosition me-2 opacityBefore"
+                    />
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        alt="TypeScript"
+                        className="imgProjects programingImagePosition me-2 opacityBefore"
+                    />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-4 bgProfilePicture"></div>
+                <div className="col-1 bgProfilePicture"></div>
+                <div className="col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                    <a href="https://github.com/Dackefrsik/Solvalla-Trav-Publikapp" target="_blank" className="mb-2">
+                        <img alt="Solvalla-Trav-Publikapp" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Solvalla-Trav-Publikapp&theme=cobalt2"/>
+                    </a>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-4 bgProfilePicture"></div>
+                <div className="col-1 bgProfilePicture"></div>
                 <div className="d-none d-md-block col-md-7 bgProfilePicture p-md-2">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="imgProjects programingImagePosition me-2 opacityBefore" />
                 </div>
@@ -93,11 +118,9 @@ function Projects({ observer }) {
                 <div className="col-4 bgProfilePicture"></div>
                 <div className="col-1 bgProfilePicture"></div>
                 <div className="col-12 col-md-block col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
-                    <div className="">
-                        <a href="https://github.com/Dackefrsik/Snake_game" target="_blank" className="mb-2">
-                            <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Snake_game&theme=cobalt2"></img>
-                        </a>
-                    </div>
+                    <a href="https://github.com/Dackefrsik/Snake_game" target="_blank" className="mb-2">
+                        <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Snake_game&theme=cobalt2"></img>
+                    </a>
                 </div>
             </div>
             <div className="row">

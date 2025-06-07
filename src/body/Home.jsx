@@ -85,9 +85,9 @@ function Home({ observer, observer2 }) {
             <div className="container-fluid" id="Home">
                 <div className="row">
                     <div className="col-12 col-md-4 bgProfilePicture">
-                        <div className="row p-lg-3">
+                        <div className="row p-md-3">
                             <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5 ">
-                                <img src={profilePicture} alt="ProfilePicture" className=" rotate w-50 h-75 profilePicture mt-lg-5" ref={imgRef} />
+                                <img src={profilePicture} alt="ProfilePicture" className=" rotate w-50 h-75 profilePicture mt-md-5" ref={imgRef} />
                             </div>
                         </div>
                     </div>
@@ -168,8 +168,8 @@ function Home({ observer, observer2 }) {
                         </div>
                         <div className="bgProfilePicture mb-3 rounded-1">
                             <div className="d-flex justify-content-center">
-                                <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="currentProject">
-                                    <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
+                                <a href="https://github.com/Dackefrsik/Solvalla-Trav-Publikapp" target="_blank" className="currentProject">
+                                    <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Solvalla-Trav-Publikapp&theme=cobalt2"></img>
                                 </a>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" className="bi bi-arrow-clockwise d-none d-md-flex align-itmes-start arrow" viewBox="0 0 16 16">

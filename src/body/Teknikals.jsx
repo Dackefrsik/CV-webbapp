@@ -186,7 +186,7 @@ function Teknikals({ observer }) {
           />
         </div>
       </div>
-      <div className="row d-sm-block d-md-none">
+      <div className="row">
         <div className="col-md-4 bgProfilePicture"></div>
         <div className="col-md-1"></div>
         <div className="col-12 col-md-3 d-flex d-md-block justify-content-center">
@@ -196,16 +196,16 @@ function Teknikals({ observer }) {
             className="w-75 h-75 imageToRight"
           />
         </div>
-
-        {/* <div className="col-12 col-md-3 d-flex d-md-block justify-content-center">
+        <div className="col-12 col-md-3 d-flex d-md-block justify-content-center">
           <img
-            src="ttps://img.shields.io/badge/PlantUML-0D597F?style=for-the-badge&logo=uml&logoColor=white"
-            alt="PlantUML"
+            src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+            alt="TypeScript"
             className="w-75 h-75 imageToRight"
-          /> 
-        </div>*/}
+          />
+        </div>
       </div>
     </div>
+
   );
 }
 

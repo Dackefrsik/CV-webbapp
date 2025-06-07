@@ -16,6 +16,7 @@
 /*Färgen på vänster sida*/
 .bgProfilePicture {
   background-color: var(--TexColor);
+  overflow-y: hidden;
 }
 
 /*Style text*/
@@ -175,7 +176,7 @@ nav a:hover {
 /*Spåret som den går i*/
 ::-webkit-scrollbar-track {
   background-color: var(--Background);
-  margin-top: 62px;
+    margin-top: 102px;
 }
 
 @media (max-width: 767px) {
