@@ -86,52 +86,52 @@ function Home({ observer, observer2 }) {
                 <div className="row">
                     <div className="col-12 col-md-4 bgProfilePicture">
                         <div className="row p-md-3">
-                            <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5 ">
-                                <img src={profilePicture} alt="ProfilePicture" className=" rotate w-50 h-75 profilePicture mt-md-5" ref={imgRef} />
+                            <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5  mb-sm-2 mb-md-0">
+                                <img src={profilePicture} alt="ProfilePicture" className=" rotate rounded img-fluid  profilePicture mt-md-5" ref={imgRef} />
                             </div>
                         </div>
                     </div>
 
                     <div className="col-md-1"></div>
 
-                    <div className="col-12 col-md-7 mt-md-5">
+                    <div className="col-12 col-md-7 mt-md-5 infoBackground">
                         <div className="row mt-md-5 ">
-                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight mt-md-5">
+                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight mt-md-5 infoText">
                                 <p>Namn</p>
                             </div>
-                            <div className="col-8 col-md-8 fontHome textMoveRight mt-md-5">
+                            <div className="col-8 col-md-8 fontHome textMoveRight mt-md-5 infoText">
                                 <p>Daniel Frisk</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight">
+                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
                                 <p>Ålder</p>
                             </div>
-                            <div className="col-8 col-md-8 fontHome textMoveRight">
+                            <div className="col-8 col-md-8 fontHome textMoveRight infoText">
                                 <p>{currentDate} år</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight">
+                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
                                 <p>Stad</p>
                             </div>
-                            <div className="col-8 col-md-8 fontHome textMoveRight">
+                            <div className="col-8 col-md-8 fontHome textMoveRight infoText">
                                 <p>Karlstad</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight">
+                            <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
                                 <p>E-mail</p>
                             </div>
-                            <div className="col-sm-12 col-md-8 fontHome textMoveRight">
+                            <div className="col-sm-12 col-md-8 fontHome textMoveRight infoText">
                                 <p>danielfrisk21@gmail.com</p>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-12 fontHome textMoveRight d-none d-md-block">
+                            <div className="col-12 fontHome textMoveRight d-none d-md-block infoText">
                                 <p>Webbutvecklarstudent på Handelshögskolan vid Karlstads universitet</p>
                             </div>
-                            <div className="col-12 fontHome textMoveRight d-block d-md-none">
+                            <div className="col-12 fontHome textMoveRight d-block d-md-none infoText">
                                 <p>Webbutvecklarstudent</p>
                             </div>
                         </div>

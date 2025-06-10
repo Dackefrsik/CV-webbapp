@@ -92,6 +92,15 @@ nav a:hover {
   .navbar-nav {
     background-color: var(--Primary);
   }
+
+  .infoBackground{
+  background-color: var(--TexColor);
+}
+
+.infoText {
+  color: var(--Background);
+  color: var(--Secondary);
+}
 }
 
 /*#endregion*/
@@ -205,6 +214,8 @@ nav a:hover {
   transform: rotateY(0deg);
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
+  width: 75%;
+  height: 85%;
 }
 
 .rotate {

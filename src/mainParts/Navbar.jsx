@@ -6,7 +6,7 @@ function Navbar() {
 
     const [isRounded, setRounded] = useState(true); // State för höger border-radius (fixad namngivning)
     const [isMenuOpen, setMenuOpen] = useState(false); // Kontrollerar om menyn är öppen (fixad namngivning)
-    const [showBurger, changeBurgerVisibility] = useState(false);
+
 
     // State för hamburgarknappens synlighet baserat på skrollposition
     // VIKTIGT: Sätts till 'false' från början så att knappen är DOLD vid laddning av sidan.
@@ -21,7 +21,6 @@ function Navbar() {
             menuButton.current.setAttribute("aria-expanded", String(!isMenuOpen));
 
         }
-        changeBurgerVisibility(true);
     };
 
     // Stänger menyn när man klickar utanför (eller via meny-länkar)
@@ -34,7 +33,6 @@ function Navbar() {
                 if (menuButton.current) {
                     menuButton.current.setAttribute("aria-expanded", "false");
                 }
-                changeBurgerVisibility(true);
 
             }
         };
