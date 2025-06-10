@@ -87,7 +87,7 @@ function Home({ observer, observer2 }) {
                     <div className="col-12 col-md-4 bgProfilePicture">
                         <div className="row p-md-3">
                             <div className="d-flex justify-content-center align-items-center bgProfilePicture profile-margin mt-sm-2 mt-md-5  mb-sm-2 mb-md-0">
-                                <img src={profilePicture} alt="ProfilePicture" className=" rotate rounded img-fluid  profilePicture mt-md-5" ref={imgRef} />
+                                <img src={profilePicture} alt="ProfilePicture" className=" rotate rounded img-fluid profilePicture mt-md-5" ref={imgRef} />
                             </div>
                         </div>
                     </div>
@@ -129,10 +129,10 @@ function Home({ observer, observer2 }) {
                         </div>
                         <div className="row">
                             <div className="col-12 fontHome textMoveRight d-none d-md-block infoText">
-                                <p>Webbutvecklarstudent på Handelshögskolan vid Karlstads universitet</p>
+                                <p>Former Web Developer Student at Handelshögskolan at Karlstads university</p>
                             </div>
                             <div className="col-12 fontHome textMoveRight d-block d-md-none infoText">
-                                <p>Webbutvecklarstudent</p>
+                                <p>Graduated Web developer student</p>
                             </div>
                         </div>
                     </div>
