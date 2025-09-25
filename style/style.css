@@ -472,3 +472,34 @@ footer {
   border-bottom-right-radius: 0.75rem;
   border-top-left-radius: 0.75rem;
 }
+
+/*#endregion*/
+
+/*#region Style Bachelor's thesis*/
+.cover {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cover:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.clickable-image {
+  position: relative;
+}
+
+.overlay-icon {
+  color: var(--Primary);
+  position: absolute;
+  bottom: 8px;
+  right: 18px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.clickable-image:hover .overlay-icon {
+  opacity: 1;
+  display: block;
+}
+/*#endregion*/

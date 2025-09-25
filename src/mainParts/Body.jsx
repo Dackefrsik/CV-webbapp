@@ -3,6 +3,7 @@ import Hobie from "../body/Hobie";
 import Teknikals from "../body/Teknikals";
 import Projects from "../body/Projects";
 import { useEffect, useState } from "react";
+import Cuppsatts from "../body/C-uppsatts";
 function Body() {
   const [show, changeShow] = useState(false);
   useEffect(() => {
@@ -87,6 +88,7 @@ function Body() {
       <Home observer={observer} observer2={observer3} />
       <Teknikals observer={observer2} />
       <Projects observer={observer3} />
+      <Cuppsatts/>
       <Hobie observer={observer} />
       {show && (
         <div className="d-flex justify-content-end">

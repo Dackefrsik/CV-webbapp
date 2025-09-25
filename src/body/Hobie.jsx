@@ -66,7 +66,7 @@ function Hobie({ observer}) {
                 </div>
                 <div className="col-md-1"></div>
                 <div className="order-1 order-md-0 col-md-2 d-flex align-items-center">
-                    <p className="imageHobieToRight">Douglas, Isle of Man 2025</p>
+                    <p className="imageHobieToRight">Douglas, Isle of Man 2024</p>
                 </div>
                 <div className="col-12 col-md-3 pb-2">
                     <img src={The_Bee_Gees} alt="The_Bee_Gees" className="w-100 h-100 w-md-75 h-md-75 imageHobieToRight" />
@@ -80,7 +80,7 @@ function Hobie({ observer}) {
                     <img src={Tempelbar} alt="Tempelbar Dublin" className="w-100 h-100 w-md-75 h-md-75 imageHobieToRight" />
                 </div>
                 <div className="col-md-2 d-flex align-items-center"> 
-                    <p className="imageHobieToRight">Tempelbar Dublin 2025</p>
+                    <p className="imageHobieToRight">Tempelbar Dublin 2024</p>
                 </div>
             </div>
             {/* <div className="row">

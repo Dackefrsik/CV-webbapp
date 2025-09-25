@@ -145,6 +145,9 @@ function Navbar() {
                                         <a className="m-2" href="#Projects" onClick={toggleMenu}>Projects</a>
                                     </li>
                                     <li>
+                                        <a href="#cUppsatts" className="m-2" onClick={toggleMenu}>Bachelor's thesis</a>
+                                    </li>
+                                    <li>
                                         <a className="m-2" href="#Hobie" onClick={toggleMenu}>Hobbies</a>
                                     </li>
                                 </ul>
