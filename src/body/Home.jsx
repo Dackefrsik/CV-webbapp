@@ -97,7 +97,7 @@ function Home({ observer, observer2 }) {
                     <div className="col-12 col-md-7 mt-md-5 infoBackground">
                         <div className="row mt-md-5 ">
                             <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight mt-md-5 infoText">
-                                <p>Namn</p>
+                                <p>Name</p>
                             </div>
                             <div className="col-8 col-md-8 fontHome textMoveRight mt-md-5 infoText">
                                 <p>Daniel Frisk</p>
@@ -105,7 +105,7 @@ function Home({ observer, observer2 }) {
                         </div>
                         <div className="row">
                             <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
-                                <p>Ålder</p>
+                                <p>Age</p>
                             </div>
                             <div className="col-8 col-md-8 fontHome textMoveRight infoText">
                                 <p>{currentDate} år</p>
@@ -113,7 +113,7 @@ function Home({ observer, observer2 }) {
                         </div>
                         <div className="row">
                             <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
-                                <p>Stad</p>
+                                <p>Location</p>
                             </div>
                             <div className="col-8 col-md-8 fontHome textMoveRight infoText">
                                 <p>Karlstad</p>
@@ -121,7 +121,7 @@ function Home({ observer, observer2 }) {
                         </div>
                         <div className="row">
                             <div className="d-none d-md-block col-4 col-md-4 fontHome textMoveRight infoText">
-                                <p>E-mail</p>
+                                <p>Email</p>
                             </div>
                             <div className="col-sm-12 col-md-8 fontHome textMoveRight infoText">
                                 <p>danielfrisk21@gmail.com</p>
@@ -132,7 +132,7 @@ function Home({ observer, observer2 }) {
                                 <p>Former Web Developer Student at Handelshögskolan at Karlstads university</p>
                             </div>
                             <div className="col-12 fontHome textMoveRight d-block d-md-none infoText">
-                                <p>Graduated Web developer student</p>
+                                <p>Junior front & backend developer</p>
                             </div>
                         </div>
                     </div>
@@ -179,8 +179,6 @@ function Home({ observer, observer2 }) {
                         </div>
                     </div>
                     <div className="col-1 d-none d-sm-block"></div>
-
-
                 </div>
             </div>
         </>

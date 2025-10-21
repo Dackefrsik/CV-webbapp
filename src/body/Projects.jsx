@@ -18,7 +18,7 @@ function Projects({ observer }) {
             observer.observe(img);
         })
 
-    }, [])
+    })
 
 
 

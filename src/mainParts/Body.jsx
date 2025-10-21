@@ -17,7 +17,6 @@ function Body() {
 
 
       if (windowHeight > (scrollHeight - innerHeight) * 0.75) {
-        console.log("show");
         changeShow(true);
       } else {
         changeShow(false);
@@ -36,7 +35,7 @@ function Body() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(entry.target);
+          //console.log(entry.target);
           // Lägg till klassen som gör att elementet visas
           entry.target.classList.add("textApear");
         }
