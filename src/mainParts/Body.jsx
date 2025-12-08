@@ -14,8 +14,6 @@ function Body() {
     
         //console.log({ windowHeight, scrollHeight, innerHeight });
 
-
-
       if (windowHeight > (scrollHeight - innerHeight) * 0.75) {
         changeShow(true);
       } else {
@@ -25,10 +23,6 @@ function Body() {
     window.addEventListener("scroll", handelScroll);
     return () => window.removeEventListener("show", handelScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({top : 0, behavior : "smooth"});
-  }
 
   //#region singel observer Observer innehåll som ska in från höger
   const observer = new IntersectionObserver(
@@ -84,6 +78,7 @@ function Body() {
 
   return (
     <>
+
       <Home observer={observer} observer2={observer3} />
       <Teknikals observer={observer2} />
       <Projects observer={observer3} />
@@ -91,7 +86,7 @@ function Body() {
       <Hobie observer={observer} />
       {show && (
         <div className="d-flex justify-content-end">
-        <button className={`slide-button ${show ? "show" : ""} rounded-4 me-2` } onClick={scrollToTop}>
+        <a className={`slide-button ${show ? "show" : ""} rounded-4 me-2` } href="#Home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
 
@@ -103,7 +98,7 @@ function Body() {
               d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
             />
           </svg>{" "}
-        </button>
+        </a>
         </div>
       )}
     </>

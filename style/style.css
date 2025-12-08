@@ -3,8 +3,13 @@
   --Primary: #34495e;
   --Secondary: #bdc3c7;
   --Background: #ffffff;
-  --TexColor: #2c3e50;
+  --TexColor: #ffffff;
   --Accentfärg: #f1c40f;
+}
+
+*{
+  padding: 0;
+  margin: 0;
 }
 
 /*Font i komponenten Home*/
@@ -13,15 +18,95 @@
   color: var(--TexColor);
 }
 
+.bi-arrow-down {
+  display: inline-block;
+}
+
+.bi-arrow-down path {
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+}
+
+a:has(.bi-arrow-down) {
+  animation: bounceAndColor 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes bounceAndColor {
+    0%, 100% {
+        color: var(--TexColor);
+        transform: translateY(0);
+    }
+    
+    50% {
+        color: var(--Primary);
+        transform: translateY(15px);
+    }
+    
+    75% {
+        color: var(--Primary);
+        transform: translateY(0);
+    }
+}
+
 /*Färgen på vänster sida*/
 .bgProfilePicture {
-  background-color: var(--TexColor);
+  /*background-color: var(--TexColor);*/
+background: linear-gradient(
+  to bottom right,
+  #2c3e50 0%,   /* mörkblå start */
+  #2f4254 16.66%,
+  #34495e 33.33%,
+  #3a4a68 50%,
+  #405275 66.66%,
+  #465a81 83.33%,
+  #4c628d 100%   /* ljusare blågrå */
+);
   overflow-y: hidden;
+}
+
+.space:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background-image: url("../src/assets/space.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* Tar bort background-attachment: fixed för iOS-kompatibilitet */
+}
+
+
+
+@supports (background-attachment: fixed) {
+  @media (min-width: 768px) {
+    .space:before {
+      background-attachment: fixed;
+    }
+  }
+}
+
+.welcome{
+  color: var(--TexColor);
+  fill: var(--TexColor);
 }
 
 /*Style text*/
 .textColor {
   color: var(--Secondary);
+  border-bottom: 3px solid var(--Accentfärg);
+  /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
+  font-size: 2rem;
+}
+
+.textColorWhite{
+    color: var(--Primary);
   border-bottom: 3px solid var(--Accentfärg);
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
   font-size: 2rem;
@@ -48,12 +133,17 @@ body {
 
 /*#region style för navbar*/
 @media (min-width: 768px) {
-  nav {
+  /* nav {
     background-color: var(--Primary);
-  }
+  } */
 .custom-toggler {
     display: none;
   }
+}
+
+.navBackground{
+  background-color: var(--Primary);
+  border-radius: 2rem;
 }
 
 nav a {
@@ -89,18 +179,16 @@ nav a:hover {
     overflow: hidden;
   }
 
-  .navbar-nav {
-    background-color: var(--Primary);
-  }
-
-  .infoBackground{
-  background-color: var(--TexColor);
-}
-
 .infoText {
   color: var(--Background);
   color: var(--Secondary);
 }
+}
+
+.textCurrentProject {
+  color: var(--Background);
+  color: var(--Secondary);
+  font-size: 2rem;
 }
 
 /*#endregion*/
@@ -172,7 +260,6 @@ nav a:hover {
   width: 3.5rem;
 }
 
-
 /*#endregion*/
 
 /*#region scrollbar*/
@@ -185,13 +272,11 @@ nav a:hover {
 /*Spåret som den går i*/
 ::-webkit-scrollbar-track {
   background-color: var(--Background);
-    margin-top: 102px;
 }
 
 @media (max-width: 767px) {
   /*Spåret som den går i*/
   ::-webkit-scrollbar-track {
-    margin-top: 56px;
   }
 }
 
@@ -264,7 +349,7 @@ nav a:hover {
 
 .imageHobieToRight {
   opacity: 0;
-  transform: translateX(200px);
+  transform: translateX(100px);
   transition: transform 1s ease-in-out, opacity 0.75s ease-in;
 }
 
@@ -443,8 +528,9 @@ footer {
 /*#endregion*/
 
 .hamburger-hidden-on-scroll {
- background-color: var(--Accentfärg);
+  background-color: var(--Accentfärg);
   position: fixed;
+  top: 50%;
   right: 0;
   left: auto;
   transform: translateY(-50%) translateX(0); /* Vertikalt centrerad, längst till höger */
@@ -460,17 +546,22 @@ footer {
 
 .hamburger-hidden-on-scroll.show {
   top: 50%;                 /* Behåll halvvägs ner */             /* Flytta horisontellt till mitten */
-  right: auto;
+  right: 0;
+  margin-right: 0.5rem;
   transform: translateY(-50%) translateX(-50%);  /* Vertikalt centrerad, horisontellt i mitten */
   animation: bounceInRight 0.6s forwards;
   opacity: 1;
 }
 
 #navbarNavAltMarkup{
-  margin-top: 2.5rem;
+  position: fixed;
+  /* right: 0.5rem; */
+  margin-top: 3rem;
+  background-color: var(--Primary);
   border-bottom-left-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
   border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 /*#endregion*/
@@ -503,3 +594,12 @@ footer {
   display: block;
 }
 /*#endregion*/
+
+
+.cuppsatts{
+  height: 50vh;
+}
+
+.travel{
+  color: var(--Secondary);
+}

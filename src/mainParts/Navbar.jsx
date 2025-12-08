@@ -105,12 +105,12 @@ function Navbar() {
     return (
         <>
             <nav className="navbar navbar-expand-md fixed-top">
-                <div className="w-100 me-2 d-md-block d-flex justify-content-end">
-                    <div className="d-flex align-items-start justify-content-end ">
+                <div className="w-100 d-flex justify-content-center">
+                    <div className="d-sm-block d-md-flex align-items-start justify-content-center justify-content-md-center navBackground">
                         <button
                             // VIKTIG KORRIGERING: HÄR APPLICERAS KLASSEN FÖR ATT DÖLJA/VISA KNAPPEN
                             // Använder '!' för att dölja när 'isHamburgerVisibleByScroll' är false
-                            className={`ms-5 ps-1 pe-1 pt-1 pb-1 custom-toggler ${isRounded ? "border-right-radius" : ""} 
+                            className={`custom-toggler ${isRounded ? "border-right-radius" : ""} 
                             hamburger-hidden-on-scroll 
                             ${(isHamburgerVisibleByScroll || isMenuOpen) ? "show" : "hide"}
                             `}
@@ -133,8 +133,8 @@ function Navbar() {
                         {/* VIKTIGT: Menypanelen (div.collapse) ska INTE ha 'hamburger-hidden-on-scroll' klassen.
                             Dess synlighet styrs enbart av 'isMenuOpen' och Bootstrap's 'show' klass. */}
                         <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""} `} id="navbarNavAltMarkup" ref={collapseRef}>
-                            <div className="ms-md-5 navbar-nav">
-                                <ul className="d-md-flex flex-row">
+                            <div className="me-md-5 navbar-nav">
+                                <ul className="d-md-flex flex-row mt-3">
                                     <li>
                                         <a className="active m-2" aria-current="page" href="#Home" onClick={toggleMenu}>Home</a>
                                     </li>

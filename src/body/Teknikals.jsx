@@ -9,7 +9,8 @@ function Teknikals({ observer }) {
     {src : "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white", alt : "BootStrap"}, 
     {src : "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black", alt : "JavaScript"}, 
     {src : "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB", alt : "React.js"}, 
-    {src : "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white", alt : "Node.js"}, 
+    {src : "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white", alt : "Node.js"},
+    {src : "https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB", alt : "React Native"}, 
     {src : "https://img.shields.io/badge/Java-F8981D?style=for-the-badge&logo=java&logoColor=white", alt : "Java"}, 
     {src : "https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white", alt : "Android"}, 
     {src : "https://img.shields.io/badge/C%23%20.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white", alt : "C#.net"}, 
@@ -41,27 +42,32 @@ function Teknikals({ observer }) {
 
   function renderTeknikals(){ 
     let tekinksPair = [];
-    for(let i = 0; i < teknikals.length; i+=2){
-      if(i < teknikals.length + 1)
+    for(let i = 0; i < teknikals.length; i+=3){
+      if(i < teknikals.length + 3)
         tekinksPair.push( 
           <div className="row">
-          <div className="col-12 col-md-4 bgProfilePicture d-flex justify-content-center mb-2 mb-md-0"></div>
-          <div className="col-md-1"></div>
-          <div className="col-12 col-md-3 d-flex d-md-block justify-content-center">
-            <img
-              src={teknikals[i].src}
-              alt={teknikals[i].alt}
-              className="w-75 h-75 imageToRight"
-            />
-          </div>
-          <div className="col-12 col-md-3 d-flex d-md-block justify-content-center">
-            <img
-              src={teknikals[i + 1].src}
-              alt={teknikals[i + 1].alt}
-              className="w-75 h-75 imageToRight"
-            />
-          </div>
-        </div> 
+            <div className="col-12 col-md-4 d-flex justify-content-center">
+              <img
+                src={teknikals[i].src}
+                alt={teknikals[i].alt}
+                className="w-75 h-75 w-md-50 h-md-50 imageToRight"
+              />
+            </div>
+            <div className="col-12 col-md-4 d-flex justify-content-center">
+              <img
+                src={teknikals[i + 1].src}
+                alt={teknikals[i + 1].alt}
+                className="w-75 h-75 w-md-50 h-md-50 imageToRight"
+              />
+            </div>
+            <div className="col-12 col-md-4 d-flex justify-content-center">
+              <img
+                src={teknikals[i + 2].src}
+                alt={teknikals[i + 2].alt}
+                className="w-75 h-75 w-md-50 h-md-50 imageToRight"
+              />
+            </div>
+          </div> 
         )
       }
       
@@ -69,10 +75,10 @@ function Teknikals({ observer }) {
   }
 
   return (
-    <div id="Tekniks" className="container-fluid">
+    <div id="Tekniks" className="container-fluid bg-white">
       <div className="row">
-        <div className="col-12 col-md-4 bgProfilePicture d-flex flex-col justify-content-center mb-2 mb-md-0">
-          <p className="textColor d-sm-none d-md-block">
+        <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">
+          <p className="textColorWhite d-sm-none d-md-block">
             Programming Techniques
           </p>
         </div>

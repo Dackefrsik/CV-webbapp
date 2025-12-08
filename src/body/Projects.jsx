@@ -23,18 +23,17 @@ function Projects({ observer }) {
 
 
     return (
-        <div id="Projects" className="container-fluid">
+        <div id="Projects" className="container-fluid bgProfilePicture">
             <div className="row">
-                <div className="col-12 col-md-4 bgProfilePicture d-flex justify-content-center">
+                <div className="col-12 d-flex justify-content-center">
                     <p className="textColor">Projects</p>
                 </div>
-                <div className="col-md-8 bgProfilePicture"></div>
             </div>
             <div className="row">
-                <div className="col-12 col-md-4 bgProfilePicture d-flex justify-content-center">
+                <div className="col-12 col-md-3  d-flex justify-content-center">
                 </div>
-                <div className="col-md-1 bgProfilePicture"></div>
-                <div className="d-none d-md-block col-md-7 bgProfilePicture p-md-2">
+                <div className="col-md-1 "></div>
+                <div className="d-none d-md-block col-md-7  p-md-2">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" alt="HTML5" className="imgProjects programingImagePosition opacityBefore" />
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS3" className="imgProjects programingImagePosition opacityBefore" />
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" className="imgProjects programingImagePosition opacityBefore" />
@@ -42,9 +41,8 @@ function Projects({ observer }) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-4 bgProfilePicture"></div>
-                <div className="col-md-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <div>
                         <a href="https://github.com/Dackefrsik/Weatherapp" target="_blank" className="mb-2">
                             <img alt="Weather application" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Weatherapp&theme=cobalt2"></img>
@@ -53,9 +51,8 @@ function Projects({ observer }) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-4 bgProfilePicture"></div>
-                <div className="col-md-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <div>
                         <a href="https://github.com/Dackefrsik/Tennis-booking" target="_blank" className="mb-2">
                             <img alt="Tennis-booking" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Tennis-booking&theme=cobalt2"></img>
@@ -64,16 +61,14 @@ function Projects({ observer }) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-4 bgProfilePicture"></div>
-                <div className="col-md-1 bgProfilePicture"></div>
-                <div className="d-none d-md-block col-md-7 bgProfilePicture p-md-2">
+                <div className="col-md-5 "></div>
+                <div className="d-none d-md-block col-md-7  p-md-2">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="imgProjects programingImagePosition me-2 opacityBefore" />
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <div>
                         <a href="https://github.com/Dackefrsik/Tournament-webbapp" target="_blank" className="mb-2">
                             <img alt="Tournament-webbapp" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Tournament-webbapp&theme=cobalt2"></img>
@@ -83,9 +78,8 @@ function Projects({ observer }) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="d-none d-md-block col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="d-none d-md-block col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                         alt="React Native"
@@ -99,34 +93,30 @@ function Projects({ observer }) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <a href="https://github.com/Dackefrsik/Solvalla-Trav-Publikapp" target="_blank" className="mb-2">
                         <img alt="Solvalla-Trav-Publikapp" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Solvalla-Trav-Publikapp&theme=cobalt2"/>
                     </a>
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="d-none d-md-block col-md-7 bgProfilePicture p-md-2">
+                <div className="col-md-5 "></div>
+                <div className="d-none d-md-block col-md-7  p-md-2">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="imgProjects programingImagePosition me-2 opacityBefore" />
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-block col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-block col-md-7  p-md-2 d-flex d-md-block justify-content-center">
                     <a href="https://github.com/Dackefrsik/Snake_game" target="_blank" className="mb-2">
                         <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Snake_game&theme=cobalt2"></img>
                     </a>
                 </div>
             </div>
             <div className="row">
-                <div className="col-4 bgProfilePicture"></div>
-                <div className="col-1 bgProfilePicture"></div>
-                <div className="col-12 col-md-block col-md-7 bgProfilePicture p-md-2 d-flex d-md-block justify-content-center">
+                <div className="col-md-5 "></div>
+                <div className="col-12 col-md-block col-md-7 p-md-2 d-flex d-md-block justify-content-center">
                     <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="mb-2">
                         <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
                     </a>
