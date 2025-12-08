@@ -4,6 +4,7 @@ import OldTownRiga from "../assets/Old_Town_Riga.jpg";
 import Nyhaven from "../assets/Nyhaven_Kopenhagen.jpg";
 import The_Bee_Gees from "../assets/The_Bee_Gees.jpg";
 import Tempelbar from "../assets/Tempelbar_Dublin.jpg";
+import sheep from "../assets/sheep.png"
 import Fjak from "../assets/FjakChockletBergen.jpg";
 
 function Hobie({ observer}) {
@@ -15,6 +16,7 @@ function Hobie({ observer}) {
         {fileName : Nyhaven, year : 2023, text : "Nyhavn Copenhagen"},
         {fileName : The_Bee_Gees, year : 2024, text : "The Bee Gess Douglas Isle of Man"},
         {fileName : Tempelbar, year : 2024, text : "Tempel Bar Dublin"},
+        {fileName : sheep, yeaR: 2025, text : "Sheeop, Lillehammer Norway"},
         {fileName : Fjak, year : 2025, text : "Fjåk Choclate Bergen"},
     ]
 
