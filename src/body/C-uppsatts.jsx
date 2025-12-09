@@ -5,9 +5,9 @@ export default function Cuppsatts(){
         <div id="cUppsatts" className="container-fluid bg-white">
             <div className="row ">
                 <div className="col-12 d-flex flex-col justify-content-center mb-2">
-                    <p className="textColorWhite d-sm-none d-md-block">
+                    <h2 className="headerWhite d-sm-none d-md-block">
                         Bachelor's thesis
-                    </p>
+                    </h2>
                 </div>
                 <div className="col-md-1"></div>
             </div>

@@ -1,10 +1,10 @@
 /*Variable för färger*/
 :root {
-  --Primary: #34495e;
-  --Secondary: #bdc3c7;
-  --Background: #ffffff;
-  --TexColor: #ffffff;
-  --Accentfärg: #f1c40f;
+  --Primary: #01152a;    /* Djup, mörkblå/svart rymd */
+  --Secondary: #1a608d;  /* Djupt havsblått */
+  --Background: #f0f7f9; /* Ljus, nästan vit färg från moln och isar */
+  --TextColor: #f0f7f9;  /* Mörkgrön (skogsområden) för bra kontrast mot Background */
+  --Accentfärg: #ffc200; /* Solglimt/Stadsljus för en varm kontrast */
 }
 
 *{
@@ -15,7 +15,7 @@
 /*Font i komponenten Home*/
 .fontHome {
   font-size: 1.5rem;
-  color: var(--TexColor);
+  color: var(--TextColor);
 }
 
 .bi-arrow-down {
@@ -29,40 +29,36 @@
 }
 
 a:has(.bi-arrow-down) {
-  animation: bounceAndColor 2s ease-in-out infinite;
+  animation: 
+  bounceAndColor 2s ease-in-out infinite,
+  colorChange 2s ease-in-out infinite;
   display: inline-block;
 }
 
 @keyframes bounceAndColor {
     0%, 100% {
-        color: var(--TexColor);
         transform: translateY(0);
     }
     
     50% {
-        color: var(--Primary);
         transform: translateY(15px);
     }
     
     75% {
-        color: var(--Primary);
         transform: translateY(0);
     }
 }
 
-/*Färgen på vänster sida*/
 .bgProfilePicture {
-  /*background-color: var(--TexColor);*/
-background: linear-gradient(
-  to bottom right,
-  #2c3e50 0%,   /* mörkblå start */
-  #2f4254 16.66%,
-  #34495e 33.33%,
-  #3a4a68 50%,
-  #405275 66.66%,
-  #465a81 83.33%,
-  #4c628d 100%   /* ljusare blågrå */
-);
+  /* background-color: var(--TextColor); */
+  background: linear-gradient(
+    to bottom right,
+    var(--Primary) 0%,    /* #01152a - 1. Djupaste Rymden / Nattsida */
+    #05284b 25%,          /* 2. Mycket mörk atmosfär / Skymning */
+    #0d426a 50%,          /* 3. Djupare hav / Sen skymning */
+    #15517b 75%,          /* 4. Ljusare hav / Tidig morgon */
+    var(--Secondary) 100% /* #1a608d - 5. Djupt Hav / Dagssida */
+  );
   overflow-y: hidden;
 }
 
@@ -93,20 +89,37 @@ background: linear-gradient(
 }
 
 .welcome{
-  color: var(--TexColor);
-  fill: var(--TexColor);
+  animation: colorChange 2s ease-in-out infinite;
+  color: var(--TextColor);
+  fill: var(--TextColor);
 }
+
+@keyframes colorChange {
+    0%, 100% {
+        color: var(--TextColor);
+    }
+    
+    50% {
+        color: var(--Primary);
+    }
+    
+    75% {
+        color: var(--Primary);
+    }
+}
+
+
 
 /*Style text*/
 .textColor {
-  color: var(--Secondary);
+  color: var(--TextColor);
   border-bottom: 3px solid var(--Accentfärg);
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
   font-size: 2rem;
 }
 
 .textColorWhite{
-    color: var(--Primary);
+    color: var(--TextColor);
   border-bottom: 3px solid var(--Accentfärg);
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
   font-size: 2rem;
@@ -147,7 +160,7 @@ body {
 }
 
 nav a {
-  color: var(--Secondary);
+  color: var(--TextColor);
   border-bottom: 3px solid transparent;
   text-decoration: none;
   font-size: 1.25rem;
@@ -179,16 +192,16 @@ nav a:hover {
     overflow: hidden;
   }
 
-.infoText {
-  color: var(--Background);
-  color: var(--Secondary);
-}
+
 }
 
-.textCurrentProject {
-  color: var(--Background);
-  color: var(--Secondary);
-  font-size: 2rem;
+.infoText {
+  color: var(--TextColor);
+}
+
+.headerWhite{
+  color: var(--Primary);
+  border-bottom: var(--Accentfärg) solid;
 }
 
 /*#endregion*/
@@ -219,7 +232,7 @@ nav a:hover {
   transition: 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transform-origin: center;
   border-radius: 3px;
-    left: 0.25rem; /* Centrera strecken inom knappen */
+  left: 0.25rem; /* Centrera strecken inom knappen */
   right: 0.25rem;
 }
 
@@ -289,7 +302,7 @@ nav a:hover {
 
 /*Vidrörande av scrollbaren*/
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--TexColor);
+  background-color: var(--TextColor);
 }
 
 /*#endregion*/
@@ -329,14 +342,14 @@ nav a:hover {
 
 /*Färg för texten hos rubrikerna till vänster*/
 .socialMediaText {
-  color: var(--Secondary);
+  color: var(--TextColor);
 }
 
 /*#endregion*/
 
 /*#region ändrar färg på icons från bootstrap*/
 .linkedInColor path {
-  fill: var(--Secondary);
+  fill: var(--TextColor);
 }
 
 .arrow path {
@@ -422,7 +435,7 @@ footer {
 }
 
 .footerText {
-  color: var(--Secondary);
+  color: var(--TextColor);
   font-size: 1.5rem;
 }
 
@@ -460,11 +473,11 @@ footer {
 /*#region Tex CurrentProject på små skärmar*/
 @media (max-width: 767px) {
   .backgorund-sm {
-    background-color: var(--TexColor);
+    background-color: var(--TextColor);
   }
 
   .textColor-sm {
-    color: var(--Secondary);
+    color: var(--TextColor);
     border-bottom: 3px solid var(--Accentfärg);
     font-size: 1.5rem;
   }
@@ -580,7 +593,7 @@ footer {
 }
 
 .overlay-icon {
-  color: var(--Primary);
+  color: var(--TextColor);
   position: absolute;
   bottom: 8px;
   right: 18px;
@@ -601,7 +614,7 @@ footer {
 }
 
 .travel{
-  color: var(--Secondary);
+  color: var(--TextColor);
 }
 
 .project-card {
@@ -610,4 +623,8 @@ footer {
 
 .project-card:hover {
   transform: scale(1.05);
+}
+
+.techniqueButtons{
+  background-color: var(--Primary);
 }

@@ -79,9 +79,9 @@ function Teknikals({ observer }) {
       <div id="Tekniks" className="container">
         <div className="row">
           <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">
-            <p className="textColorWhite d-sm-none d-md-block">
+            <h2 className="headerWhite d-sm-none d-md-block">
               Programming Techniques
-            </p>
+            </h2>
           </div>
           <div className="col-md-1"></div>
         </div>

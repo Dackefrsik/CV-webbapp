@@ -7,12 +7,14 @@ import ponggame from "../assets/Mockups/ponggame.png"
 import chattapplication from "../assets/Mockups/chattapplication.png"
 import pokemonmobileapplication from "../assets/Mockups/pokemonmobileapplication.png"
 import todoapp from "../assets/Mockups/todoapp.png"
+import tournamentwebbapp from "../assets/Mockups/tournamentwebbapp.png"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
 
     const techniques = [
         {name : "HTML & CSS"},
+        {name : "Bootstrap"},
         {name : "JavaScript"},
         {name : "TypeScript"},
         {name : "Api"},
@@ -23,13 +25,14 @@ function Projects({ observer }) {
     ]
 
     const Projects = [
-        {name : "Weather application", link : "https://github.com/Dackefrsik/Weatherapp", img : weatherappp, techniques : ["HTML & CSS", "JavaScript", "Node.js", "Api"]},
-        {name : "Tennis booking", link : "https://github.com/Dackefrsik/Tennis-booking", img : tennisbooking, techniques : ["HTML & CSS", "JavaScript"]},
+        {name : "Weather application", link : "https://github.com/Dackefrsik/Weatherapp", img : weatherappp, techniques : ["HTML & CSS", "JavaScript", "Node.js", "Api", "Bootstrap"]},
+        {name : "Tennis booking", link : "https://github.com/Dackefrsik/Tennis-booking", img : tennisbooking, techniques : ["HTML & CSS", "JavaScript", "Bootstrap"]},
         {name : "Snake game", link : "https://github.com/Dackefrsik/Snake_game", img : snakegame, techniques : ["Java"]},
         {name : "Pong game", link : "https://github.com/Dackefrsik/PongGame", img : ponggame, techniques : ["Java"]},
-        {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["HTML & CSS", "JavaScript", "React.js", "Node.js"]},
+        {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["HTML & CSS", "JavaScript", "React.js", "Node.js", "Bootstrap"]},
         {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["TypeScript", "React-native", "Api"]},
         {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["TypeScript", "React-native"]},
+        {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["HTML & CSS", "JavaScript", "React.js", "Bootstrap"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);
@@ -62,7 +65,7 @@ function Projects({ observer }) {
 
     function showProjects(){
         return filteredProjects.map((project, index) => (
-            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 bg-light rounded-2 p-2 project-card">
+            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 bg-light rounded-2 p-2 project-card d-flex flex-column">
                 <div className="">
                     <a href={project.link} target="_blank" className="mb-2">
                         <img alt={project.name} className="img-fluid mb-2 mb-md-0 opacityBefore" src={project.img}></img>
@@ -71,12 +74,14 @@ function Projects({ observer }) {
                 <div>
                     <h5>{project.name}</h5>
                 </div>
-                <div className="d-flex mt-2 flex-wrap">
-                    {project.techniques.map((technique, i) => (
-                        <p key={i} className="me-1 bgProfilePicture rounded-2 text-light p-1">
-                            {technique}
-                        </p>
-                    ))}
+                <div className="mt-auto">
+                    <div className="d-flex flex-wrap mt-2">
+                        {project.techniques.map((technique, i) => (
+                            <p key={i} className="me-1 techniqueButtons rounded-2 text-light p-1">
+                                {technique}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </div>
         ))
