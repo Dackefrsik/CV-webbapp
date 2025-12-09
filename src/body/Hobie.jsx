@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import LennonWall from "../assets/LennonWall_Praha.jpg";
-import OldTownRiga from "../assets/Old_Town_Riga.jpg";
-import Nyhaven from "../assets/Nyhaven_Kopenhagen.jpg";
-import The_Bee_Gees from "../assets/The_Bee_Gees.jpg";
-import Tempelbar from "../assets/Tempelbar_Dublin.jpg";
-import sheep from "../assets/sheep.png"
-import Fjak from "../assets/FjakChockletBergen.jpg";
+import LennonWall from "../assets/Hobbies/LennonWall_Praha.jpg";
+import OldTownRiga from "../assets/Hobbies/Old_Town_Riga.jpg";
+import Nyhaven from "../assets/Hobbies/Nyhaven_Kopenhagen.jpg";
+import The_Bee_Gees from "../assets/Hobbies/The_Bee_Gees.jpg";
+import Tempelbar from "../assets/Hobbies/Tempelbar_Dublin.jpg";
+import sheep from "../assets/Hobbies/sheep.png"
+import Fjak from "../assets/Hobbies/FjakChockletBergen.jpg";
 
 function Hobie({ observer}) {
 

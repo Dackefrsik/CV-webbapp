@@ -75,16 +75,18 @@ function Teknikals({ observer }) {
   }
 
   return (
-    <div id="Tekniks" className="container-fluid bg-white">
-      <div className="row">
-        <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">
-          <p className="textColorWhite d-sm-none d-md-block">
-            Programming Techniques
-          </p>
+    <div className="bg-white">
+      <div id="Tekniks" className="container">
+        <div className="row">
+          <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">
+            <p className="textColorWhite d-sm-none d-md-block">
+              Programming Techniques
+            </p>
+          </div>
+          <div className="col-md-1"></div>
         </div>
-        <div className="col-md-1"></div>
+        {renderTeknikals()}
       </div>
-      {renderTeknikals()}
     </div>
 
   );

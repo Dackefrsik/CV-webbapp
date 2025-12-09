@@ -1,17 +1,48 @@
-import { useEffect } from "react"
+import { useEffect, useState} from "react"
+
+import weatherappp from "../assets/Mockups/weateherapp.png"
+import tennisbooking from "../assets/Mockups/tennnisbooking.png"
+import snakegame from "../assets/Mockups/snakegame.png"
+import ponggame from "../assets/Mockups/ponggame.png"
+import chattapplication from "../assets/Mockups/chattapplication.png"
+import pokemonmobileapplication from "../assets/Mockups/pokemonmobileapplication.png"
+import todoapp from "../assets/Mockups/todoapp.png"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
+
+    const techniques = [
+        {name : "HTML & CSS"},
+        {name : "JavaScript"},
+        {name : "TypeScript"},
+        {name : "Api"},
+        {name : "React.js"},
+        {name : "React-native"},
+        {name : "Node.js"},
+        {name : "Java"},
+    ]
+
+    const Projects = [
+        {name : "Weather application", link : "https://github.com/Dackefrsik/Weatherapp", img : weatherappp, techniques : ["HTML & CSS", "JavaScript", "Node.js", "Api"]},
+        {name : "Tennis booking", link : "https://github.com/Dackefrsik/Tennis-booking", img : tennisbooking, techniques : ["HTML & CSS", "JavaScript"]},
+        {name : "Snake game", link : "https://github.com/Dackefrsik/Snake_game", img : snakegame, techniques : ["Java"]},
+        {name : "Pong game", link : "https://github.com/Dackefrsik/PongGame", img : ponggame, techniques : ["Java"]},
+        {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["HTML & CSS", "JavaScript", "React.js", "Node.js"]},
+        {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["TypeScript", "React-native", "Api"]},
+        {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["TypeScript", "React-native"]},
+    ]
+
+    const [filteredProjects, setFilteredProjects] = useState(Projects);
+    const [selectedTechnique, setSelectedTechnique] = useState(null);
+
+
 
     /*#region useefect som kör animationer*/
     useEffect(() => {
 
         //Hämtar ut alla bilder i komponenten
         let imgRef = document.querySelectorAll("img");
-
-
         //IntersectObserver som visar bilderna genom att sätta opaciteten till 1
-
 
         //Lopar igenom alla bilder och observerar dem
         imgRef.forEach(img => {
@@ -20,7 +51,51 @@ function Projects({ observer }) {
 
     })
 
+    function createButtons() {
+        return techniques.map((technique, index) => (
+                <div className="col-md-auto col-6 d-flex justify-content-evenly justify-content-md-center flex-wrap" key={index}>
+                    <button className={selectedTechnique === technique.name ? "btn btn-success m-2" : "btn btn-light m-2"}  onClick={() => filterProjects(technique.name)}>{technique.name}</button>
+                </div>
+            )
+        )
+    }
 
+    function showProjects(){
+        return filteredProjects.map((project, index) => (
+            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 bg-light rounded-2 p-2 project-card">
+                <div className="">
+                    <a href={project.link} target="_blank" className="mb-2">
+                        <img alt={project.name} className="img-fluid mb-2 mb-md-0 opacityBefore" src={project.img}></img>
+                    </a>
+                </div>
+                <div>
+                    <h5>{project.name}</h5>
+                </div>
+                <div className="d-flex mt-2 flex-wrap">
+                    {project.techniques.map((technique, i) => (
+                        <p key={i} className="me-1 bgProfilePicture rounded-2 text-light p-1">
+                            {technique}
+                        </p>
+                    ))}
+                </div>
+            </div>
+        ))
+    }
+
+    function filterProjects(technique) {
+    if (selectedTechnique === technique) {
+        // Om samma knapp trycks igen → visa alla
+        setFilteredProjects(Projects);
+        setSelectedTechnique(null);
+    } else {
+        // Annars filtrera
+        const filtered = Projects.filter(project =>
+            project.techniques.includes(technique)
+        );
+        setFilteredProjects(filtered);
+        setSelectedTechnique(technique);
+    }
+}
 
     return (
         <div id="Projects" className="container-fluid bgProfilePicture">
@@ -29,100 +104,16 @@ function Projects({ observer }) {
                     <p className="textColor">Projects</p>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-12 col-md-3  d-flex justify-content-center">
-                </div>
-                <div className="col-md-1 "></div>
-                <div className="d-none d-md-block col-md-7  p-md-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" alt="HTML5" className="imgProjects programingImagePosition opacityBefore" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS3" className="imgProjects programingImagePosition opacityBefore" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" className="imgProjects programingImagePosition opacityBefore" />
-                    <img src="https://camo.githubusercontent.com/34c801e15a80d0d62f3da09bc6ca4f46a243457939381ae67f5003bdac51d432/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f6a6176617363726970742f6a6176617363726970742d706c61696e2e737667" alt="JavaScript" className="imgProjects programingImagePosition opacityBefore" />
-                </div>
+            <div className="row justify-content-center">
+                {createButtons()}
             </div>
             <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <div>
-                        <a href="https://github.com/Dackefrsik/Weatherapp" target="_blank" className="mb-2">
-                            <img alt="Weather application" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Weatherapp&theme=cobalt2"></img>
-                        </a>
-                    </div>
+                <div className="p-md-2 d-flex justify-content-evenly flex-wrap">
+                    {showProjects()}
                 </div>
+                
             </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <div>
-                        <a href="https://github.com/Dackefrsik/Tennis-booking" target="_blank" className="mb-2">
-                            <img alt="Tennis-booking" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Tennis-booking&theme=cobalt2"></img>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="d-none d-md-block col-md-7  p-md-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="imgProjects programingImagePosition me-2 opacityBefore" />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <div>
-                        <a href="https://github.com/Dackefrsik/Tournament-webbapp" target="_blank" className="mb-2">
-                            <img alt="Tournament-webbapp" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Tournament-webbapp&theme=cobalt2"></img>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="d-none d-md-block col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                        alt="React Native"
-                        className="imgProjects programingImagePosition me-2 opacityBefore"
-                    />
-                    <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                        alt="TypeScript"
-                        className="imgProjects programingImagePosition me-2 opacityBefore"
-                    />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <a href="https://github.com/Dackefrsik/Solvalla-Trav-Publikapp" target="_blank" className="mb-2">
-                        <img alt="Solvalla-Trav-Publikapp" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Solvalla-Trav-Publikapp&theme=cobalt2"/>
-                    </a>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="d-none d-md-block col-md-7  p-md-2">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="imgProjects programingImagePosition me-2 opacityBefore" />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-block col-md-7  p-md-2 d-flex d-md-block justify-content-center">
-                    <a href="https://github.com/Dackefrsik/Snake_game" target="_blank" className="mb-2">
-                        <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=Snake_game&theme=cobalt2"></img>
-                    </a>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-5 "></div>
-                <div className="col-12 col-md-block col-md-7 p-md-2 d-flex d-md-block justify-content-center">
-                    <a href="https://github.com/Dackefrsik/PongGame" target="_blank" className="mb-2">
-                        <img alt="Snake_game" className="img-fluid mb-2 mb-md-0 opacityBefore" src="https://github-readme-stats.vercel.app/api/pin/?username=Dackefrsik&repo=PongGame&theme=cobalt2"></img>
-                    </a>
-                </div>
-            </div>
-        </div>
+        </div>       
     )
 
 }
