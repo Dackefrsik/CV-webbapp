@@ -2,13 +2,26 @@
 import Navbar from "./mainParts/Navbar"
 import Body from "./mainParts/Body"
 import Footer from "./mainParts/Footer"
+import LoadingScreen from "./LoadingScreen";
+
+import React, {useState, useEffect} from "react";
 
 function App() {
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulerar laddning (t.ex. kan vara fetch till API)
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;   // ⬅️ Här visas den
+  }
   return (
     <>
       <Navbar />
-
       <div className="space">
         <div className="d-flex justify-content-center flex-column align-items-center vh-100 welcome">
           <h1>Welcome!</h1>

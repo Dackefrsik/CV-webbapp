@@ -56,7 +56,7 @@ function Projects({ observer }) {
 
     function createButtons() {
         return techniques.map((technique, index) => (
-                <div className="col-md-auto col-6 d-flex justify-content-evenly justify-content-md-center flex-wrap" key={index}>
+                <div className="col-md-auto col-4 d-flex justify-content-evenly justify-content-md-center flex-wrap" key={index}>
                     <button className={selectedTechnique === technique.name ? "btn btn-success m-2" : "btn btn-light m-2"}  onClick={() => filterProjects(technique.name)}>{technique.name}</button>
                 </div>
             )
@@ -66,7 +66,7 @@ function Projects({ observer }) {
     function showProjects(){
         return filteredProjects.map((project, index) => (
             <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 lightBackground rounded-2 p-2 project-card d-flex flex-column">
-                <div className="">
+                <div className="d-flex justify-content-center">
                     <a href={project.link} target="_blank" className="mb-2">
                         <img alt={project.name} className="img-fluid mb-2 mb-md-0 opacityBefore" src={project.img}></img>
                     </a>

@@ -12,6 +12,49 @@
   margin: 0;
 }
 
+/*Spinner för loading screen*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% { transform: rotate(360deg); }
+}
+
+/*#region Loading Screen Overlay*/
+.loading-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    var(--Primary) 0%,
+    #05284b 25%,
+    #0d426a 50%,
+    #15517b 75%,
+    var(--Secondary) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Blockera scrollning när loading screen visas */
+body.loading-active {
+  overflow: hidden;
+}
+
+.loading{
+  color: var(--Accentfärg);
+  font-size: 2rem;
+}
+/*#endregion*/
+
 .lightBackground{
   background-color: var(--Background);
 }
@@ -22,6 +65,7 @@
   color: var(--TextColor);
 }
 
+/*#region bounce och färge för pilen*/
 .bi-arrow-down {
   display: inline-block;
 }
@@ -34,12 +78,12 @@
 
 a:has(.bi-arrow-down) {
   animation: 
-  bounceAndColor 2s ease-in-out infinite,
+  bounce 2s ease-in-out infinite,
   colorChange 2s ease-in-out infinite;
   display: inline-block;
 }
 
-@keyframes bounceAndColor {
+@keyframes bounce {
     0%, 100% {
         transform: translateY(0);
     }
@@ -52,6 +96,7 @@ a:has(.bi-arrow-down) {
         transform: translateY(0);
     }
 }
+/*#endregion*/
 
 .bgProfilePicture {
   /* background-color: var(--TextColor); */
@@ -66,6 +111,7 @@ a:has(.bi-arrow-down) {
   overflow-y: hidden;
 }
 
+/*#region bild och animationer till welcome*/
 .space:before {
   content: "";
   display: block;
@@ -75,19 +121,17 @@ a:has(.bi-arrow-down) {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background-image: url("../src/assets/space.png");
+  background-image: url("../src/assets/space-min.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /* Tar bort background-attachment: fixed för iOS-kompatibilitet */
 }
-
-
 
 @supports (background-attachment: fixed) {
   @media (min-width: 768px) {
     .space:before {
       background-attachment: fixed;
+      background-image: url("../src/assets/space.png");
     }
   }
 }
@@ -111,10 +155,9 @@ a:has(.bi-arrow-down) {
         color: var(--Primary);
     }
 }
+/*#endregion*/
 
-
-
-/*Style text*/
+/*#region Style text*/
 .textColor {
   color: var(--TextColor);
   border-bottom: 3px solid var(--Accentfärg);
@@ -128,6 +171,7 @@ a:has(.bi-arrow-down) {
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
   font-size: 2rem;
 }
+/*#emdregion*/
 
 /*#region generell css *, html, body*/
 * {
