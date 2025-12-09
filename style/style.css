@@ -12,6 +12,10 @@
   margin: 0;
 }
 
+.lightBackground{
+  background-color: var(--Background);
+}
+
 /*Font i komponenten Home*/
 .fontHome {
   font-size: 1.5rem;

@@ -65,17 +65,16 @@ function Projects({ observer }) {
 
     function showProjects(){
         return filteredProjects.map((project, index) => (
-            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 bg-light rounded-2 p-2 project-card d-flex flex-column">
+            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 lightBackground rounded-2 p-2 project-card d-flex flex-column">
                 <div className="">
                     <a href={project.link} target="_blank" className="mb-2">
                         <img alt={project.name} className="img-fluid mb-2 mb-md-0 opacityBefore" src={project.img}></img>
                     </a>
                 </div>
-                <div>
-                    <h5>{project.name}</h5>
-                </div>
                 <div className="mt-auto">
+                    <h5>{project.name}</h5>
                     <div className="d-flex flex-wrap mt-2">
+                        
                         {project.techniques.map((technique, i) => (
                             <p key={i} className="me-1 techniqueButtons rounded-2 text-light p-1">
                                 {technique}

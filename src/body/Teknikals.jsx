@@ -75,7 +75,7 @@ function Teknikals({ observer }) {
   }
 
   return (
-    <div className="bg-white">
+    <div className="lightBackground">
       <div id="Tekniks" className="container">
         <div className="row">
           <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">

@@ -2,7 +2,7 @@ import cover from "../assets/Omslag examensarbete.png";
 
 export default function Cuppsatts(){
     return(
-        <div id="cUppsatts" className="container-fluid bg-white">
+        <div id="cUppsatts" className="container-fluid lightBackground">
             <div className="row ">
                 <div className="col-12 d-flex flex-col justify-content-center mb-2">
                     <h2 className="headerWhite d-sm-none d-md-block">
