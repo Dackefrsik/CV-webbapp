@@ -8,6 +8,7 @@ import chattapplication from "../assets/Mockups/chattapplication.png"
 import pokemonmobileapplication from "../assets/Mockups/pokemonmobileapplication.png"
 import todoapp from "../assets/Mockups/todoapp.png"
 import tournamentwebbapp from "../assets/Mockups/tournamentwebbapp.png"
+import Cuppsatts from "../assets/Mockups/Omslag examensarbete.png"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
@@ -22,6 +23,7 @@ function Projects({ observer }) {
         {name : "React-native"},
         {name : "Node.js"},
         {name : "Java"},
+        {name : "Thesis"}
     ]
 
     const Projects = [
@@ -32,7 +34,8 @@ function Projects({ observer }) {
         {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["HTML & CSS", "JavaScript", "React.js", "Node.js", "Bootstrap"]},
         {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["TypeScript", "React-native", "Api"]},
         {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["TypeScript", "React-native"]},
-        {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["HTML & CSS", "JavaScript", "React.js", "Bootstrap"]}
+        {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
+        {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);
@@ -44,7 +47,7 @@ function Projects({ observer }) {
     useEffect(() => {
 
         //Hämtar ut alla bilder i komponenten
-        let imgRef = document.querySelectorAll("img");
+        let imgRef = document.querySelectorAll(".opacityBefore");
         //IntersectObserver som visar bilderna genom att sätta opaciteten till 1
 
         //Lopar igenom alla bilder och observerar dem
@@ -65,10 +68,10 @@ function Projects({ observer }) {
 
     function showProjects(){
         return filteredProjects.map((project, index) => (
-            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 lightBackground rounded-2 p-2 project-card d-flex flex-column">
+            <div key={index} className="m-1 mt-3 mb-3 col-12 col-md-3 lightBackground rounded-2 p-2 project-card d-flex flex-column opacityBefore">
                 <div className="d-flex justify-content-center">
                     <a href={project.link} target="_blank" className="mb-2">
-                        <img alt={project.name} className="img-fluid mb-2 mb-md-0 opacityBefore" src={project.img}></img>
+                        <img alt={project.name} className="img-fluid mb-2 mb-md-0" src={project.img}></img>
                     </a>
                 </div>
                 <div className="mt-auto">
@@ -76,9 +79,12 @@ function Projects({ observer }) {
                     <div className="d-flex flex-wrap mt-2">
                         
                         {project.techniques.map((technique, i) => (
-                            <p key={i} className="me-1 techniqueButtons rounded-2 text-light p-1">
-                                {technique}
-                            </p>
+                            <>
+                                {technique !== "Thesis" ?  
+                                <p key={i} className="me-1 techniqueButtons rounded-2 text-light p-1">
+                                    {technique }
+                                </p> : <></>}
+                            </>
                         ))}
                     </div>
                 </div>
@@ -103,15 +109,15 @@ function Projects({ observer }) {
 
     return (
         <div id="Projects" className="container-fluid bgProfilePicture">
-            <div className="row">
+            <div className="row opacityBefore">
                 <div className="col-12 d-flex justify-content-center">
                     <p className="textColor">Projects</p>
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className="row opacityBefore justify-content-center">
                 {createButtons()}
             </div>
-            <div className="row">
+            <div className="row ">
                 <div className="p-md-2 d-flex justify-content-evenly flex-wrap">
                     {showProjects()}
                 </div>

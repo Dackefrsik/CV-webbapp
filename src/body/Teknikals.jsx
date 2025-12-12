@@ -1,4 +1,5 @@
 import { useEffect} from "react";
+import App from "./LogoLoop";
 
 function Teknikals({ observer }) {
 
@@ -77,15 +78,16 @@ function Teknikals({ observer }) {
   return (
     <div className="lightBackground">
       <div id="Tekniks" className="container">
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12 d-flex justify-content-center mb-2 mb-md-0">
             <h2 className="headerWhite d-sm-none d-md-block">
               Programming Techniques
             </h2>
           </div>
           <div className="col-md-1"></div>
-        </div>
-        {renderTeknikals()}
+        </div> */}
+        {/* {renderTeknikals()} */}
+        <App/>
       </div>
     </div>
 

@@ -7,7 +7,7 @@ import LoadingScreen from "./LoadingScreen";
 import React, {useState, useEffect} from "react";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  /* const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulerar laddning (t.ex. kan vara fetch till API)
@@ -18,7 +18,7 @@ function App() {
 
   if (loading) {
     return <LoadingScreen />;   // ⬅️ Här visas den
-  }
+  } */
   return (
     <>
       <Navbar />

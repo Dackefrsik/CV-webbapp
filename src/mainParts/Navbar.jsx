@@ -138,14 +138,14 @@ function Navbar() {
                                     <li>
                                         <a className="active m-2" aria-current="page" href="#Home" onClick={toggleMenu}>Home</a>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a className="m-2" href="#Tekniks" onClick={toggleMenu}>Programming Techniques</a>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <a className="m-2" href="#Projects" onClick={toggleMenu}>Projects</a>
                                     </li>
                                     <li>
-                                        <a href="#cUppsatts" className="m-2" onClick={toggleMenu}>Bachelor's thesis</a>
+                                        <a href="#Career" className="m-2" onClick={toggleMenu}>Career</a>
                                     </li>
                                     <li>
                                         <a className="m-2" href="#Hobie" onClick={toggleMenu}>Hobbies</a>
