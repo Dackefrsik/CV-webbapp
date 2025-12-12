@@ -879,4 +879,7 @@ footer {
   transform: translateX(0px);
 }
 
+.card-title{
+  border-bottom: var(--Accentfärg) solid;
+}
 

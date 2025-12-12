@@ -4,9 +4,9 @@ export default function Career({observer, observer2}){
 
 
     const careers = [
-        {work: "Jula", title: "Customeremploye", time : "February 2020 - now", tasks : ["Cashier", "informationdesk", "customer help", "warehouse work", "truck driver", "goods picking"]},
-        {work: "Lidl", title: "Customeremploye", time : "June 2019 - December 2019", tasks : ["Cashier", "customer help", "warehouse work", "goods picking"]},
-        {work: "Täby Judo", title: "Klubb Trainer", time : "August 2015 - May 2022", tasks : ["Planing trainning sessions", "Lead training sessions", "Intructing partisipating students",  "Grade studenst"]},
+        {work: "Jula", title: "Store assistant", time : "February 2020 - now", description : "As a store assistant at Jula, I have had responsibilities in both customer service and logistics. I have handled the cash register and customer service as well as driving a forklift and picking goods in the warehouse. Through the work tasks, I have developed my communication skills and developed my abilities to take responsibility and collaborate with others."},
+        {work: "Lidl", title: "Store assistant", time : "June 2019 - December 2019", description : "My duties included working at the cash register, picking goods and helping and guiding customers on the floor. This has helped me develop my communication skills and taught me how to handle a fast and stressful pace."},
+        {work: "Täby Judo", title: "Clubb Trainer", time : "August 2015 - May 2022", description : "Under mina år som klubbtränare har jag haft ansvar för att leda träningspass av olika slag för barn och ungdomar mellan 7 till 15 år och utvecklat färdigheter inom ledarskap, pedagogik och kommunikation."},
     ]
 
     useEffect(() => {
@@ -31,21 +31,12 @@ export default function Career({observer, observer2}){
                 return (
                 <div className="row">
                     <div className="col-5 d-flex justify-content-center ps-5">
-                        <div className="card bgProfilePicture textColorWhite shadow-lg border-0 rounded-4 m-3 leftCareer" style={{ width: "100%" }}>
+                        <div className="card bgProfilePicture textColorWhite  border-0 rounded-4 m-3 leftCareer" style={{ width: "100%" }}>
                             <div className="card-body p-4 ">
-                                <h3 className="card-title fw-bold">{careers.work}</h3>
-                                <h5 className="fw-semibold">{careers.title}</h5>
+                                <p className="card-title fw-bold">{careers.work}</p>
+                                <p className="fw-semibold">{careers.title}</p>
                                 <p className="text-light opacity-75">{careers.time}</p>
-
-                                <h5 className="mt-3">Tasks</h5>
-                                <ul className="list-unstyled mt-2">
-                                    {careers.tasks.map((task, index) => (
-                                        <li key={index} className="mb-1">
-                                            <i className="bi bi-check-circle me-2"></i>
-                                            {task}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <p>{careers.description}</p>
                             </div>
                         </div>
                     </div>
@@ -70,21 +61,12 @@ export default function Career({observer, observer2}){
                         </div>
                     </div>
                     <div className="col-5 d-flex justify-content-center pe-5">
-                        <div className="card bgProfilePicture textColorWhite shadow-lg border-0 rounded-4 m-3 rightCareer" style={{ width: "100%" }}>
+                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 rightCareer" style={{ width: "100%" }}>
                                 <div className="card-body p-4">
                                     <h3 className="card-title fw-bold">{careers.work}</h3>
                                     <h5 className="fw-semibold">{careers.title}</h5>
                                     <p className="text-light opacity-75">{careers.time}</p>
-
-                                    <h5 className="mt-3">Tasks</h5>
-                                    <ul className="list-unstyled mt-2">
-                                        {careers.tasks.map((task, index) => (
-                                            <li key={index} className="mb-1">
-                                                <i className="bi bi-check-circle me-2"></i>
-                                                {task}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <p>{careers.description}</p>
                                 </div>
                             </div>
                     </div>
