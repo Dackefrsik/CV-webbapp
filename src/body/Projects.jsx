@@ -14,34 +14,27 @@ import Cuppsatts from "../assets/Mockups/Omslag examensarbete.png"
 function Projects({ observer }) {
 
     const techniques = [
-        {name : "HTML & CSS"},
-        {name : "Bootstrap"},
-        {name : "JavaScript"},
-        {name : "TypeScript"},
+        {name : "Web Development"},
+        {name : "App Development"},
         {name : "Api"},
-        {name : "React.js"},
-        {name : "React-native"},
-        {name : "Node.js"},
         {name : "Java"},
         {name : "Thesis"}
     ]
 
     const Projects = [
-        {name : "Weather application", link : "https://github.com/Dackefrsik/Weatherapp", img : weatherappp, techniques : ["HTML & CSS", "JavaScript", "Node.js", "Api", "Bootstrap"]},
-        {name : "Tennis booking", link : "https://github.com/Dackefrsik/Tennis-booking", img : tennisbooking, techniques : ["HTML & CSS", "JavaScript", "Bootstrap"]},
+        {name : "Weather application", link : "https://github.com/Dackefrsik/Weatherapp", img : weatherappp, techniques : ["Web Development", "HTML & CSS", "JavaScript", "Node.js", "Api", "Bootstrap"]},
+        {name : "Tennis booking", link : "https://github.com/Dackefrsik/Tennis-booking", img : tennisbooking, techniques : ["Web Development", "HTML & CSS", "JavaScript", "Bootstrap"]},
         {name : "Snake game", link : "https://github.com/Dackefrsik/Snake_game", img : snakegame, techniques : ["Java"]},
         {name : "Pong game", link : "https://github.com/Dackefrsik/PongGame", img : ponggame, techniques : ["Java"]},
-        {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["HTML & CSS", "JavaScript", "React.js", "Node.js", "Bootstrap"]},
-        {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["TypeScript", "React-native", "Api"]},
-        {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["TypeScript", "React-native"]},
-        {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
+        {name : "Chat application", link : "https://github.com/Dackefrsik/Chatapplication-", img : chattapplication, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Node.js", "Bootstrap"]},
+        {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["App Development", "TypeScript", "React-native", "Api"]},
+        {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["App Development", "TypeScript", "React-native"]},
+        {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
         {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);
     const [selectedTechnique, setSelectedTechnique] = useState(null);
-
-
 
     /*#region useefect som kör animationer*/
     useEffect(() => {
@@ -54,16 +47,16 @@ function Projects({ observer }) {
         imgRef.forEach(img => {
             observer.observe(img);
         })
-
     })
 
     function createButtons() {
+        
         return techniques.map((technique, index) => (
-                <div className="col-md-auto col-4 d-flex justify-content-evenly justify-content-md-center flex-wrap" key={index}>
-                    <button className={selectedTechnique === technique.name ? "btn btn-success m-2" : "btn btn-light m-2"}  onClick={() => filterProjects(technique.name)}>{technique.name}</button>
+                <div className="col-md-auto col-6 d-flex justify-content-evenly justify-content-md-center flex-wrap" key={index}>
+                    <button className={selectedTechnique === technique.name ? "btn btn-success m-2 w-100" : "btn btn-light m-2 w-100"}  onClick={() => filterProjects(technique.name)}>{technique.name}</button>
                 </div>
             )
-        )
+        )        
     }
 
     function showProjects(){
@@ -109,16 +102,16 @@ function Projects({ observer }) {
 
     return (
         <div id="Projects" className="container-fluid bgProfilePicture">
-            <div className="row opacityBefore">
+            <div className="row opacityBefore ">
                 <div className="col-12 d-flex justify-content-center">
-                    <p className="textColor">Projects</p>
+                    <p className="textColor fs-2">Projects</p>
                 </div>
             </div>
             <div className="row opacityBefore justify-content-center">
                 {createButtons()}
             </div>
             <div className="row ">
-                <div className="p-md-2 d-flex justify-content-evenly flex-wrap">
+                <div className="p-2 ps-4 pe-4 d-flex justify-content-evenly flex-wrap">
                     {showProjects()}
                 </div>
                 

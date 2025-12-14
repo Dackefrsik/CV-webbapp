@@ -104,9 +104,9 @@ function Navbar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-md fixed-top">
-                <div className="w-100 d-flex justify-content-center">
-                    <div className="d-sm-block d-md-flex align-items-start justify-content-center justify-content-md-center navBackground">
+            <nav className="navbar navbar-expand-md fixed-top w-100">
+                <div className="w-100 d-flex justify-content-sm-end justify-content-md-center">
+                    <div className="d-sm-flex justify-content-sm-end w-100">
                         <button
                             // VIKTIG KORRIGERING: HÄR APPLICERAS KLASSEN FÖR ATT DÖLJA/VISA KNAPPEN
                             // Använder '!' för att dölja när 'isHamburgerVisibleByScroll' är false
@@ -118,23 +118,24 @@ function Navbar() {
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup"
                             aria-controls="navbarNavAltMarkup"
-                            //aria-expanded={isMenuOpen} // Koppla till isMenuOpen state
+                            aria-expanded={isMenuOpen} // Koppla till isMenuOpen state
                             aria-label="Toggle navigation"
                             ref={menuButton}
                             onClick={toggleMenu}>
                             {/* Använd den kombinerade toggleMenu-funktionen */}
-
-
-
                             <span className="navbar-toggler-top"></span>
                             <span className="navbar-toggler-middle"></span>
                             <span className="navbar-toggler-bottom"></span>
                         </button>
-                        {/* VIKTIGT: Menypanelen (div.collapse) ska INTE ha 'hamburger-hidden-on-scroll' klassen.
-                            Dess synlighet styrs enbart av 'isMenuOpen' och Bootstrap's 'show' klass. */}
-                        <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""} `} id="navbarNavAltMarkup" ref={collapseRef}>
+                        <div className={`collapse navbar-collapse d-flex mt-5 mt-md-0 justify-content-end justify-content-md-between mb-2  ${isMenuOpen ? "show" : ""} `} id="navbarNavAltMarkup" ref={collapseRef}>
+                            <ul className="d-md-flex flex-row mb-0 d-none mt-3">
+                                    <li>
+                                        <a className="active m-2" aria-current="page" href="#Home" onClick={toggleMenu}>Daniel</a>
+                                    </li>
+                                </ul>
                             <div className="me-md-5 navbar-nav">
-                                <ul className="d-md-flex flex-row mt-3">
+                                
+                                <ul className="d-md-flex flex-row mt-3 m-auto mb-0 navBackground rounded-4 p-2 p-md-o">
                                     <li>
                                         <a className="active m-2" aria-current="page" href="#Home" onClick={toggleMenu}>Home</a>
                                     </li>
@@ -148,9 +149,14 @@ function Navbar() {
                                         <a href="#Career" className="m-2" onClick={toggleMenu}>Career</a>
                                     </li>
                                     <li>
+                                        <a className="m-2" href="#Educations" onClick={toggleMenu}>Educations</a>
+                                    </li>
+                                    <li>
                                         <a className="m-2" href="#Hobie" onClick={toggleMenu}>Hobbies</a>
                                     </li>
                                 </ul>
+                            </div>
+                            <div className="d-sm-none d-md-block">
                             </div>
                         </div>
                     </div>

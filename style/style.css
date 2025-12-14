@@ -21,7 +21,6 @@ html{
 body {
   overflow-y: hidden;
   height: 100%;
-
 }
 
 /*Spinner för loading screen*/
@@ -174,7 +173,6 @@ a:has(.bi-arrow-down) {
   color: var(--TextColor);
   border-bottom: 3px solid var(--Accentfärg);
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
-  font-size: 2rem;
 }
 
 .textColorWhite{
@@ -202,17 +200,19 @@ body {
 
 /*#region style för navbar*/
 @media (min-width: 768px) {
-  /* nav {
+  nav {
     background-color: var(--Primary);
-  } */
+  }
 .custom-toggler {
     display: none;
   }
 }
 
-.navBackground{
-  background-color: var(--Primary);
-  border-radius: 2rem;
+#Projects,
+#Career,
+#Educations,
+#Hobie {
+  scroll-margin-top: 100px;
 }
 
 nav a {
@@ -230,6 +230,10 @@ nav a:hover {
 
   nav {
     margin-top: 50vh;
+  }
+
+  .navBackground{
+  background-color: var(--Primary);
   }
 
   .buttonDiv{
@@ -261,6 +265,7 @@ nav a:hover {
 /*#endregion*/
 
 /*#region Grund postitionen på sträcken i hamburgarmenyn*/
+
 .navbar-collapse {
   overflow: hidden;
   opacity: 1;
@@ -368,11 +373,33 @@ nav a:hover {
   height: 85%;
 }
 
-.appearRight{
+@media (min-width: 767px) {
+  .appearRight{
   transform: translateX(-50px);
   transition: transform 1s ease-in-out, opacity 0.5s ease-in;
-    opacity: 0;
+  opacity: 0;
+  }
+
+  .textMoveRight {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in;
+  }
+
+  .textApear {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
 }
+
+  .rightCareer{
+    opacity: 0;
+    transform: translateX(-300px) ;
+    transition: transform 0.75s ease-in, opacity 0.75s ease-in;
+    overflow-y: hidden;
+
+  }
 
 .imageApearRight{
   transform: translateX(0px);
@@ -430,16 +457,7 @@ nav a:hover {
 /*#region tesxt som ska från höger till vänster*/
 /*Texten innan den vissas upp*/
 
-.textMoveRight {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: transform 1s ease-in-out, opacity 0.5s ease-in;
-}
 
-.textApear {
-  opacity: 1;
-  transform: translateX(0px);
-}
 
 /*#endregion*/
 
@@ -485,13 +503,15 @@ footer {
 
 .opacityBefore {
   opacity: 0;
-  transition: opacity 1.5s ease-in;
-  transform: translateY(150px);
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .opacityAfter {
   opacity: 1;
   transform: translateX(0px);
+  
+
 }
 
 /*#endregion*/
@@ -590,17 +610,6 @@ footer {
   transform: translateY(-50%) translateX(-50%);  /* Vertikalt centrerad, horisontellt i mitten */
   animation: bounceInRight 0.6s forwards;
   opacity: 1;
-}
-
-#navbarNavAltMarkup{
-  position: fixed;
-  /* right: 0.5rem; */
-  margin-top: 3rem;
-  background-color: var(--Primary);
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
 }
 
 /*#endregion*/
@@ -856,22 +865,26 @@ footer {
 }
 /*#endregion*/
 
-.leftCareer{
-  opacity: 0;
-  transform: translateX(300px);
-  transition: transform 0.75s ease-in, opacity 0.75s ease-in;
-  overflow-y: hidden;
+@media (min-width: 767px) {
+    .leftCareer{
+    opacity: 0;
+    transform: translateX(300px);
+    transition: transform 0.75s ease-in, opacity 0.75s ease-in;
+    overflow-y: hidden;
+  }
+
+  .rightCareer{
+    opacity: 0;
+    transform: translateX(-300px) ;
+    transition: transform 0.75s ease-in, opacity 0.75s ease-in;
+    overflow-y: hidden;
+
+  }
 }
 
 .inLeft{
   transform: translateX(0px);
   opacity: 1;
-}
-
-.rightCareer{
-  opacity: 0;
-  transform: translateX(-300px) ;
-  transition: transform 0.75s ease-in, opacity 0.75s ease-in;
 }
 
 .textApear {
@@ -883,3 +896,6 @@ footer {
   border-bottom: var(--Accentfärg) solid;
 }
 
+.techniqueButtons {
+  font-size: 0.8rem; /* standard små skärmar */
+}

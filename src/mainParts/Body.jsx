@@ -69,7 +69,7 @@ function Body() {
       },
       {
         //Görs när hela bilden visas
-        threshold: 0.25,
+        threshold: 0.5,
       }
     );
   });
@@ -82,7 +82,7 @@ function Body() {
       {/* <App /> */}
       <Teknikals observer={observer2} />
       <Projects observer={observer3} />
-      <Career observer={observer} observer2={observer2}/>
+      <Career observer={observer} observer2={observer2} observer3={observer3}/>
       <Hobie observer={observer} />
       {show && (
         <div className="d-flex justify-content-end">

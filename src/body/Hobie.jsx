@@ -64,7 +64,7 @@ function Hobie({ observer}) {
         <div id="Hobie" className="container-fluid bgProfilePicture">
             <div className="row">
                 <div className="col-12 d-flex justify-content-center">
-                    <p className="textColor">Hobbies</p>
+                    <p className="textColor fs-2">Hobbies</p>
                 </div>
                 <div className="col-12 d-flex justify-content-center">
                     <h5 className="mt-2 imageHobieToRight travel">Travel</h5>

@@ -4,26 +4,15 @@ import Body from "./mainParts/Body"
 import Footer from "./mainParts/Footer"
 import LoadingScreen from "./LoadingScreen";
 
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 function App() {
-  /* const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Simulerar laddning (t.ex. kan vara fetch till API)
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
-
-  if (loading) {
-    return <LoadingScreen />;   // ⬅️ Här visas den
-  } */
   return (
     <>
       <Navbar />
-      <div className="space">
-        <div className="d-flex justify-content-center flex-column align-items-center vh-100 welcome">
+      {<div className="space">
+        <div className="d-flex justify-content-center flex-column align-items-center vh-100 welcome opacityBefore">
           <h1>Welcome!</h1>
           <a href="#Home">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
@@ -31,7 +20,7 @@ function App() {
             </svg>   
           </a>
         </div>
-      </div>
+      </div>}
       <Body />
       <Footer/>
     </>

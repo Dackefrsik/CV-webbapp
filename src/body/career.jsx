@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export default function Career({observer, observer2}){
+export default function Career({observer, observer2, observer3}){
 
     const careers = [
         {work: "Jula", title: "Store assistant", time : "February 2020 - now", description : "As a store assistant at Jula, I have had responsibilities in both customer service and logistics. I have handled the cash register and customer service as well as driving a forklift and picking goods in the warehouse. Through the work tasks, I have developed my communication skills and developed my abilities to take responsibility and collaborate with others."},
@@ -16,28 +16,32 @@ export default function Career({observer, observer2}){
     ]
     
     useEffect(() => {
+        const isMobile = window.innerWidth < 768; // t.ex. små skärmar
+
         let leftCareerRef = document.querySelectorAll(".leftCareer");
-
-        leftCareerRef.forEach((left) => {
-            console.log("left");
-            observer2.observe(left);
-        })
-
         let rightCareerRef = document.querySelectorAll(".rightCareer");
+        let upCareerRef = document.querySelectorAll(".opacityBefore");
 
-        rightCareerRef.forEach((right) => {
-            console.log("right")
-            observer.observe(right);
-        })
-    }, [])
+        if (isMobile) {
+            // på små skärmar, använd t.ex. observer3 för allt
+            leftCareerRef.forEach(el => observer3.observe(el));
+            rightCareerRef.forEach(el => observer3.observe(el));
+            upCareerRef.forEach(el => observer3.observe(el));
+        } else {
+            // på stora skärmar, använd dina vanliga observers
+            leftCareerRef.forEach(el => observer2.observe(el));
+            rightCareerRef.forEach(el => observer.observe(el));
+            upCareerRef.forEach(el => observer3.observe(el));
+        }
+    }, []);
 
     function renderCareer(){
         return careers.map((careers, index) => {
             if(index % 2 == 0){
                 return (
                 <div className="row">
-                    <div className="col-5 d-flex justify-content-center ps-5">
-                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 leftCareer" style={{ width: "100%" }}>
+                    <div className="col-12 col-md-5 d-flex justify-content-center ps-md-5">
+                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 leftCareer opacityBefore" style={{ width: "100%" }}>
                             <div className="card-body p-4 ">
                                 <h3 className="card-title fw-bold">{careers.work}</h3>
                                 <p className="fs-4 fw-semibold">{careers.title}</p>
@@ -46,28 +50,28 @@ export default function Career({observer, observer2}){
                             </div>
                         </div>
                     </div>
-                    <div className="col-2 container timeLine-container d-flex justify-content-center">
+                    <div className="col-md-2 col-12 container timeLine-container justify-content-center d-none d-md-flex">
                         <div className="timeLine mb-2 d-flex justify-content-center">
                             <span className="roundDot mb-5">
                             </span>
                         </div>
                     </div>
-                    <div className="col-5"></div>
+                    <div className="col-12 col-md-5"></div>
                 </div>
             )}
             else  if(index % 2 !== 0){
                 return (
                 <div className="row">
-                        <div className="col-5 d-flex justify-content-center">
+                        <div className="col-12 col-md-5 d-flex justify-content-center d-none d-md-flex">
                         </div>
-                        <div className="col-2 container timeLine-container d-flex justify-content-center">
+                        <div className="col-md-2 col-12 container timeLine-container d-flex justify-content-center d-none d-md-flex">
                         <div className="timeLine mb-2 d-flex justify-content-center">
                             <span className="roundDot mb-5">
                             </span>
                         </div>
                     </div>
-                    <div className="col-5 d-flex justify-content-center pe-5">
-                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 rightCareer" style={{ width: "100%" }}>
+                    <div className="col-12 col-md-5 d-flex justify-content-center p-md-5">
+                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 rightCareer opacityBefore" style={{ width: "100%" }}>
                                 <div className="card-body p-4">
                                     <h3 className="card-title fw-bold">{careers.work}</h3>
                                     <p className="fs-4 fw-semibold">{careers.title}</p>
@@ -86,8 +90,8 @@ export default function Career({observer, observer2}){
             if(index % 2 !== 0){
                 return (
                 <div className="row">
-                    <div className="col-5 d-flex justify-content-center ps-5">
-                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 leftCareer" style={{ width: "100%" }}>
+                    <div className="col-12 col-md-5 d-flex justify-content-center ps-md-5">
+                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 leftCareer opacityBefore" style={{ width: "100%" }}>
                             <div className="card-body p-4 ">
                                 <h3 className="card-title fw-bold">{educations.education}</h3>
                                 <p className="fs-4 text-light opacity-75">{educations.time}</p>
@@ -95,28 +99,28 @@ export default function Career({observer, observer2}){
                             </div>
                         </div>
                     </div>
-                    <div className="col-2 container timeLine-container d-flex justify-content-center">
+                    <div className="col-md-2 col-12 container timeLine-container d-flex justify-content-center d-none d-md-flex">
                         <div className="timeLine mb-2 d-flex justify-content-center">
                             <span className="roundDot mb-5">
                             </span>
                         </div>
                     </div>
-                    <div className="col-5"></div>
+                    <div className="col-12 col-md-5 d-none d-md-flex"></div>
                 </div>
             )}
             else  if(index % 2 == 0){
                 return (
                 <div className="row">
-                        <div className="col-5 d-flex justify-content-center">
+                        <div className="col-12 col-md-5 d-flex justify-content-center d-none d-md-flex">
                         </div>
-                        <div className="col-2 container timeLine-container d-flex justify-content-center">
+                        <div className="col-md-2 col-12 container timeLine-container d-flex justify-content-center d-none d-md-flex">
                         <div className="timeLine mb-2 d-flex justify-content-center">
                             <span className="roundDot mb-5">
                             </span>
                         </div>
                     </div>
-                    <div className="col-5 d-flex justify-content-center pe-5">
-                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 rightCareer" style={{ width: "100%" }}>
+                    <div className="col-12 col-md-5 d-flex justify-content-center pe-md-5">
+                        <div className="card bgProfilePicture textColorWhite border-0 rounded-4 m-3 rightCareer opacityBefore" style={{ width: "100%" }}>
                                 <div className="card-body p-4">
                                     <h3 className="card-title fw-bold">{educations.education}</h3>
                                     <p className="fs-4 text-light opacity-75">{educations.time}</p>
@@ -132,9 +136,9 @@ export default function Career({observer, observer2}){
     return(
         <>
             <div id="Career" className="container-fluid lightBackground">
-                <div className="row ">
+                <div className="row opacityBefore">
                     <div className="col-12 d-flex flex-col justify-content-center mb-2">
-                        <h2 className="headerWhite d-sm-none d-md-block">
+                        <h2 className="headerWhite d-md-block fs-2 ">
                             Career
                         </h2>
                     </div>
@@ -143,9 +147,9 @@ export default function Career({observer, observer2}){
                 {renderCareer()}
             </div>
             <div id="Educations" className="container-fluid lightBackground">
-                <div className="row ">
+                <div className="row opacityBefore">
                     <div className="col-12 d-flex flex-col justify-content-center mb-2">
-                        <h2 className="headerWhite d-sm-none d-md-block">
+                        <h2 className="headerWhite d-md-block fs-2">
                             Educations
                         </h2>
                     </div>
