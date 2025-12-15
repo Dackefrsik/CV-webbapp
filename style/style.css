@@ -7,9 +7,13 @@
   --Accentfärg: #ffc200; /* Solglimt/Stadsljus för en varm kontrast */
 }
 
+/*#region allmän css => *, html, body*/
 *{
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 html{
@@ -19,11 +23,31 @@ html{
 }
 
 body {
-  overflow-y: hidden;
   height: 100%;
+  background-color: var(--Background);
+}
+/*#endregion*/
+
+/*#region skiftande bakgrundsförgen*/
+.bgProfilePicture {
+  /* background-color: var(--TextColor); */
+  background: linear-gradient(
+    to bottom right,
+    var(--Primary) 0%,    /* #01152a - 1. Djupaste Rymden / Nattsida */
+    #05284b 25%,          /* 2. Mycket mörk atmosfär / Skymning */
+    #0d426a 50%,          /* 3. Djupare hav / Sen skymning */
+    #15517b 75%,          /* 4. Ljusare hav / Tidig morgon */
+    var(--Secondary) 100% /* #1a608d - 5. Djupt Hav / Dagssida */
+  );
+  overflow-y: hidden;
 }
 
-/*Spinner för loading screen*/
+.lightBackground{
+  background-color: var(--Background);
+}
+/*#endregion*/
+
+/*#region Spinner för loading screen*/
 @keyframes spin {
   0% { transform: rotate(0deg); }
   25% {transform: rotate(90deg);}
@@ -31,6 +55,7 @@ body {
   75% {transform: rotate(270deg);}
   100% { transform: rotate(360deg); }
 }
+/*#endregion*/
 
 /*#region Loading Screen Overlay*/
 .loading-screen-overlay {
@@ -66,63 +91,14 @@ body.loading-active {
 }
 /*#endregion*/
 
-.lightBackground{
-  background-color: var(--Background);
-}
-
-/*Font i komponenten Home*/
+/*#region font i komponenten Home*/
 .fontHome {
   font-size: 1.5rem;
   color: var(--TextColor);
 }
-
-/*#region bounce och färge för pilen*/
-.bi-arrow-down {
-  display: inline-block;
-}
-
-.bi-arrow-down path {
-  stroke: currentColor;
-  stroke-width: 1.75;
-  stroke-linejoin: round;
-}
-
-a:has(.bi-arrow-down) {
-  animation: 
-  bounce 2s ease-in-out infinite,
-  colorChange 2s ease-in-out infinite;
-  display: inline-block;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    
-    50% {
-        transform: translateY(15px);
-    }
-    
-    75% {
-        transform: translateY(0);
-    }
-}
 /*#endregion*/
 
-.bgProfilePicture {
-  /* background-color: var(--TextColor); */
-  background: linear-gradient(
-    to bottom right,
-    var(--Primary) 0%,    /* #01152a - 1. Djupaste Rymden / Nattsida */
-    #05284b 25%,          /* 2. Mycket mörk atmosfär / Skymning */
-    #0d426a 50%,          /* 3. Djupare hav / Sen skymning */
-    #15517b 75%,          /* 4. Ljusare hav / Tidig morgon */
-    var(--Secondary) 100% /* #1a608d - 5. Djupt Hav / Dagssida */
-  );
-  overflow-y: hidden;
-}
-
-/*#region bild och animationer till welcome*/
+/*#region overlay space*/
 .space:before {
   content: "";
   display: block;
@@ -148,7 +124,7 @@ a:has(.bi-arrow-down) {
 }
 
 .welcome{
-  animation: colorChange 2s ease-in-out infinite;
+  /*animation: colorChange 2s ease-in-out infinite;*/
   color: var(--TextColor);
   fill: var(--TextColor);
 }
@@ -166,6 +142,65 @@ a:has(.bi-arrow-down) {
         color: var(--Primary);
     }
 }
+
+.bi-arrow-down {
+  display: inline-block;
+}
+
+.bi-arrow-down path {
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+}
+
+a:has(.bi-arrow-down) {
+  animation: 
+  bounce 2s ease-in-out infinite;
+  /* colorChange 2s ease-in-out infinite; */
+  display: inline-block;
+  color: var(--TextColor);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(15px);
+    }
+    
+    75% {
+        transform: translateY(0);
+    }
+}
+
+.typewriter-text {
+    /* Gör fonten monospace för ett mer klassiskt utseende */
+    font-family: monospace;
+
+    min-height: 1.5em; /* Justera detta värde efter din faktiska fontstorlek */
+    line-height: 1.5; /* Se till att line-height är definierad */
+
+    /* Förhindra att texten går till nästa rad */
+    white-space: nowrap; 
+    /* Dölj text som går utanför bredden */
+    overflow: hidden; 
+    /* Centrera elementet i type-writer container */
+    margin: 0 auto; 
+    /* Markören blinkar */
+    animation: 
+        /* Stegen för att simulera skrivmaskinen hanteras av React/JS */
+        /* Markören blinkar */
+        blink-caret .75s step-end infinite;
+}
+
+/* * Blinkande markör-animation
+ */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; } /* Gör markören synlig i mitten av timingen */
+}
 /*#endregion*/
 
 /*#region Style text*/
@@ -181,21 +216,6 @@ a:has(.bi-arrow-down) {
   /*Behöver en ny rad för varje element som ska in i vänsterkolumenen*/
   font-size: 2rem;
 }
-/*#emdregion*/
-
-/*#region generell css *, html, body*/
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-body {
-  background-color: var(--Background);
-}
-
 /*#endregion*/
 
 /*#region style för navbar*/
@@ -203,7 +223,8 @@ body {
   nav {
     background-color: var(--Primary);
   }
-.custom-toggler {
+
+  .custom-toggler {
     display: none;
   }
 }
@@ -264,7 +285,32 @@ nav a:hover {
 
 /*#endregion*/
 
-/*#region Grund postitionen på sträcken i hamburgarmenyn*/
+/*#region Hambugemenyn*/
+.hamburger-hidden-on-scroll {
+  background-color: var(--Accentfärg);
+  position: fixed;
+  top: 50%;
+  right: 0;
+  left: auto;
+  transform: translateY(-50%) translateX(0); /* Vertikalt centrerad, längst till höger */
+  transform-origin: right center;
+  transition: 
+    transform 0.4s ease, 
+    opacity 0.3s ease, 
+    left 0.4s, 
+    right 0.4s, 
+    top 0.4s;
+  opacity: 0;
+}
+
+.hamburger-hidden-on-scroll.show {
+  top: 50%;                 /* Behåll halvvägs ner */             /* Flytta horisontellt till mitten */
+  right: 0;
+  margin-right: 0.5rem;
+  transform: translateY(-50%) translateX(-50%);  /* Vertikalt centrerad, horisontellt i mitten */
+  animation: bounceInRight 0.6s forwards;
+  opacity: 1;
+}
 
 .navbar-collapse {
   overflow: hidden;
@@ -346,11 +392,6 @@ nav a:hover {
   background-color: var(--Background);
 }
 
-@media (max-width: 767px) {
-  /*Spåret som den går i*/
-  ::-webkit-scrollbar-track {
-  }
-}
 
 /*Själva scrollbaren*/
 ::-webkit-scrollbar-thumb {
@@ -366,44 +407,10 @@ nav a:hover {
 
 /*#endregion*/
 
-/*#region rotation för profilbilden*/
-
+/*#region profilbildenn i home*/
 .profilePicture {
   width: 70%;
   height: 85%;
-}
-
-@media (min-width: 767px) {
-  .appearRight{
-  transform: translateX(-50px);
-  transition: transform 1s ease-in-out, opacity 0.5s ease-in;
-  opacity: 0;
-  }
-
-  .textMoveRight {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: transform 1s ease-in-out, opacity 0.5s ease-in;
-  }
-
-  .textApear {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-
-}
-
-  .rightCareer{
-    opacity: 0;
-    transform: translateX(-300px) ;
-    transition: transform 0.75s ease-in, opacity 0.75s ease-in;
-    overflow-y: hidden;
-
-  }
-
-.imageApearRight{
-  transform: translateX(0px);
-  opacity: 1;
 }
 
 @media (max-width: 1900px) {
@@ -417,7 +424,6 @@ nav a:hover {
     margin-top: 0px;
   }
 }
-
 /*#endregion*/
 
 /*#region rubrikerna till vänster*/
@@ -441,11 +447,9 @@ nav a:hover {
 .arrow path {
   fill: var(--Secondary);
 }
-
 /*#endregion*/
 
 /*#region hobies*/
-
 .imageHobieToRight {
   opacity: 0;
   transform: translateX(100px);
@@ -454,15 +458,7 @@ nav a:hover {
 
 /*#endregion*/
 
-/*#region tesxt som ska från höger till vänster*/
-/*Texten innan den vissas upp*/
-
-
-
-/*#endregion*/
-
 /*#region bilderna som visar programmeringsspråk*/
-
 .imageToRight {
   opacity: 0;
   transform: translateX(50px);
@@ -492,7 +488,6 @@ footer {
     height: 3rem;
   }
 }
-
 /*#endregion*/
 
 /*#region image projects*/
@@ -586,34 +581,6 @@ footer {
 
 /*#endregion*/
 
-.hamburger-hidden-on-scroll {
-  background-color: var(--Accentfärg);
-  position: fixed;
-  top: 50%;
-  right: 0;
-  left: auto;
-  transform: translateY(-50%) translateX(0); /* Vertikalt centrerad, längst till höger */
-  transform-origin: right center;
-  transition: 
-    transform 0.4s ease, 
-    opacity 0.3s ease, 
-    left 0.4s, 
-    right 0.4s, 
-    top 0.4s;
-  opacity: 0;
-}
-
-.hamburger-hidden-on-scroll.show {
-  top: 50%;                 /* Behåll halvvägs ner */             /* Flytta horisontellt till mitten */
-  right: 0;
-  margin-right: 0.5rem;
-  transform: translateY(-50%) translateX(-50%);  /* Vertikalt centrerad, horisontellt i mitten */
-  animation: bounceInRight 0.6s forwards;
-  opacity: 1;
-}
-
-/*#endregion*/
-
 /*#region Style Bachelor's thesis*/
 .cover {
   transition: transform 0.2s, box-shadow 0.2s;
@@ -643,12 +610,9 @@ footer {
 }
 /*#endregion*/
 
+/*#region Style för projekt*/
 .cuppsatts{
   height: 50vh;
-}
-
-.travel{
-  color: var(--TextColor);
 }
 
 .project-card {
@@ -662,6 +626,13 @@ footer {
 .techniqueButtons{
   background-color: var(--Primary);
 }
+/*#endregion*/
+
+/*#region färg på text i travel */
+.travel{
+  color: var(--TextColor);
+}
+/*#endregion*/
 
 /*#region Logo Loop*/
 .logoloop {
@@ -865,6 +836,7 @@ footer {
 }
 /*#endregion*/
 
+/*#region animationer på jobben in career*/
 @media (min-width: 767px) {
     .leftCareer{
     opacity: 0;
@@ -899,3 +871,4 @@ footer {
 .techniqueButtons {
   font-size: 0.8rem; /* standard små skärmar */
 }
+/*#endregion*/

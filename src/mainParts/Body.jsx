@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Career from "../body/career";
 import { App } from "../body/LogoLoop";
 
-function Body() {
+function Body({observer}) {
   const [show, changeShow] = useState(false);
   useEffect(() => {
     const handelScroll = () => {
@@ -24,24 +24,6 @@ function Body() {
     //return () => window.removeEventListener("scroll", handelScroll);
 
   }, []);
-
-  //#region singel observer Observer innehåll som ska in från höger
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log("Image ", entry.target);
-          // Lägg till klassen som gör att elementet visas
-          entry.target.classList.add("textApear");
-        }
-      });
-    },
-    {
-      // Görs när åtminstone 25% av elementet är i bild
-      threshold: 0.25,
-    }
-  );
-  //#endregion
 
   //#region Observer som flyttar in från vänster
   const observer2 = new IntersectionObserver(
@@ -78,7 +60,7 @@ function Body() {
   return (
     <>
 
-      <Home observer={observer} observer2={observer3} />
+      <Home observer={observer2} />
       {/* <App /> */}
       <Teknikals observer={observer2} />
       <Projects observer={observer3} />

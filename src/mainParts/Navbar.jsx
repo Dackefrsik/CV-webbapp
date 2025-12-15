@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 
-function Navbar() {
+function Navbar({observer}) {
     const collapseRef = useRef(null); // Ref för menypanelen
     const menuButton = useRef(null); // Ref för hamburgarknappen
 
@@ -59,14 +59,6 @@ function Navbar() {
             // Kontrollera om skärmen är "liten" (t.ex. under 768px, Bootstrap's md-brytpunkt)
             const isSmallScreen = window.matchMedia("(max-width: 767.98px)").matches;
 
-            // FELSÖKNING: Logga dessa värden för att se vad som händer
-            /* console.log("--- Scroll Event ---");
-            console.log("windowHeight:", windowHeight);
-            console.log("scrollThreshold:", scrollThreshold);
-            console.log("isSmallScreen:", isSmallScreen);
-            console.log("isHamburgerVisibleByScroll (before logic):", isHamburgerVisibleByScroll); */
-
-
             // Applicera skroll-logiken ENDAST på små skärmar
             if (isSmallScreen) {
                 if (windowHeight > scrollThreshold) {
@@ -101,10 +93,18 @@ function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isMenuOpen, setMenuOpen, setRounded, isHamburgerVisibleByScroll]); // Beroenden för att trigga omvärdering vid state-ändringar
 
+    useEffect(() => {
+
+        const navRef = document.querySelectorAll(".opacityBefore")
+
+        navRef.forEach((nav) => {
+            observer.observe(nav)
+        })
+    }, [])
 
     return (
         <>
-            <nav className="navbar navbar-expand-md fixed-top w-100">
+            <nav className="navbar navbar-expand-md fixed-top w-100 opacityBefore">
                 <div className="w-100 d-flex justify-content-sm-end justify-content-md-center">
                     <div className="d-sm-flex justify-content-sm-end w-100">
                         <button

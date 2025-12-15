@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import profilePicture from "../assets/Profilbild.jpg"
 
 
-function Home({ observer, observer2 }) {
+function Home({observer}) {
     const [currentDate, setCurrentDate] = useState("");
     const imgRef = useRef(null);
 
@@ -32,39 +32,10 @@ function Home({ observer, observer2 }) {
     //#endregion
 
     useEffect(() => {
-        // Hämtar ut all text
-        /* const textElements = document.querySelectorAll(".textMoveRight");
-
-        // Loopar igenom alla texter
-        textElements.forEach(text => {
-            observer.observe(text);
-        }); */
-
-        // Hämtar ut alla bilder
-        const appearRight = document.querySelectorAll(".appearRight");
-
-        // Observer som kollar alla bilder
-        /* onst imgObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Tar bort klassen rotate
-                    entry.target.classList.add("imageApearRight");
-                }
-            });
-        }, {
-            // Sker när hela bilden är synlig
-            threshold: 0.5,
-        }); */
-
-        // Går igenom alla bilderna och observerar dem
-        /* appearRight.forEach(img => {
-            imgObserver.observe(img);
-        }); */
-
         const contentUp = document.querySelectorAll(".opacityBefore");
 
         contentUp.forEach((content) => {
-            observer2.observe(content)
+            observer.observe(content)
         })
         
 
