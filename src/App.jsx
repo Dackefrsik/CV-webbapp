@@ -2,7 +2,7 @@
 import Navbar from "./mainParts/Navbar"
 import Body from "./mainParts/Body"
 import Footer from "./mainParts/Footer"
-import LoadingScreen from "./LoadingScreen";
+//import LoadingScreen from "./LoadingScreen";
 
 import WordSlider from "./OtherParts/WordSlider";
 

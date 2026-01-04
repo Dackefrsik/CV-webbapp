@@ -1,4 +1,4 @@
-import { HashLoader  } from "react-spinners";
+/* import { HashLoader  } from "react-spinners";
 
 function LoadingScreen() {
   return (
@@ -9,4 +9,4 @@ function LoadingScreen() {
   );
 }
 
-export default LoadingScreen;
+export default LoadingScreen; */

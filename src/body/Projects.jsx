@@ -9,6 +9,7 @@ import pokemonmobileapplication from "../assets/Mockups/pokemonmobileapplication
 import todoapp from "../assets/Mockups/todoapp.png"
 import tournamentwebbapp from "../assets/Mockups/tournamentwebbapp.png"
 import Cuppsatts from "../assets/Mockups/Omslag examensarbete.png"
+import artistino from "../assets/Mockups/artistino.jpg"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
@@ -18,6 +19,7 @@ function Projects({ observer }) {
         {name : "App Development"},
         {name : "Api"},
         {name : "Java"},
+        {name : "Python"},
         {name : "Thesis"}
     ]
 
@@ -30,7 +32,8 @@ function Projects({ observer }) {
         {name : "Mobile Pokemon app", link : "https://github.com/Dackefrsik/Mobile-Pokemon-app", img : pokemonmobileapplication, techniques : ["App Development", "TypeScript", "React-native", "Api"]},
         {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["App Development", "TypeScript", "React-native"]},
         {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
-        {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]}
+        {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]},
+        {name : "Artistino discord bot", link : "https://github.com/Dackefrsik/Artistino-discord-bot", img : artistino, techniques : ["Python", "Api"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);
