@@ -42,7 +42,7 @@ function App() {
       <Navbar observer={observer}/>
       {<div className="space">
         <div className="d-flex justify-content-center flex-column align-items-center vh-100 welcome opacityBefore">
-          <h1>Welcome!</h1>
+          <h1 className="welcomeText">Welcome!</h1>
           <WordSlider  phrases={phrases} typingSpeed={60} deletingSpeed={50} delayAfterTyped={1500} delayBeforeStart={500}/>
           <a href="#Home">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">

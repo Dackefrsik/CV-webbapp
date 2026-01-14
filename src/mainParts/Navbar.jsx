@@ -33,7 +33,6 @@ function Navbar({observer}) {
                 if (menuButton.current) {
                     menuButton.current.setAttribute("aria-expanded", "false");
                 }
-
             }
         };
 
@@ -101,6 +100,16 @@ function Navbar({observer}) {
             observer.observe(nav)
         })
     }, [])
+
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {  // Exempel: när man scrollat 50px
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
     return (
         <>

@@ -108,7 +108,7 @@ body.loading-active {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background-image: url("../src/assets/space-min.jpg");
+  background-image: url("../src/assets/CoverImage/Cover2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -118,7 +118,7 @@ body.loading-active {
   @media (min-width: 768px) {
     .space:before {
       background-attachment: fixed;
-      background-image: url("../src/assets/space.png");
+      background-image: url("../src/assets/CoverImage/Cover2.jpg");
     }
   }
 }
@@ -127,6 +127,10 @@ body.loading-active {
   /*animation: colorChange 2s ease-in-out infinite;*/
   color: var(--TextColor);
   fill: var(--TextColor);
+}
+
+.welcomeText{
+  font-weight: bold;
 }
 
 @keyframes colorChange {
@@ -178,7 +182,7 @@ a:has(.bi-arrow-down) {
 .typewriter-text {
     /* Gör fonten monospace för ett mer klassiskt utseende */
     font-family: monospace;
-
+    
     min-height: 1.5em; /* Justera detta värde efter din faktiska fontstorlek */
     line-height: 1.5; /* Se till att line-height är definierad */
 
@@ -193,6 +197,10 @@ a:has(.bi-arrow-down) {
         /* Stegen för att simulera skrivmaskinen hanteras av React/JS */
         /* Markören blinkar */
         blink-caret .75s step-end infinite;
+}
+
+.typewriter-container>h3{
+  font-weight: bold;
 }
 
 /* * Blinkande markör-animation
@@ -220,8 +228,13 @@ a:has(.bi-arrow-down) {
 
 /*#region style för navbar*/
 @media (min-width: 768px) {
-  nav {
+  nav.scrolled {
     background-color: var(--Primary);
+    color: var(--Background);
+  }
+
+  nav.scrolled a{
+    color: var(--Background);
   }
 
   .custom-toggler {
@@ -237,7 +250,7 @@ a:has(.bi-arrow-down) {
 }
 
 nav a {
-  color: var(--TextColor);
+  color: var(--Primary);
   border-bottom: 3px solid transparent;
   text-decoration: none;
   font-size: 1.25rem;
@@ -488,6 +501,34 @@ footer {
     height: 3rem;
   }
 }
+
+.socialList{
+  margin-left: 0; /* Tar bort vänstermarginal */
+  padding-left: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--Background);
+}
+
+.socialList>li>a{
+  color: var(--Background);
+  text-decoration: none;
+}
+
+.poweredBy{
+  color: var(--Background);
+}
+
+.spa-footer{
+  color: var(--Background);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.copy{
+  padding-top: 1rem;
+}
+
 /*#endregion*/
 
 /*#region image projects*/
