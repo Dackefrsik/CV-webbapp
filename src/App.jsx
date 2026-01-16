@@ -1,11 +1,12 @@
 
+import { useEffect, useState } from "react";
 import Navbar from "./mainParts/Navbar"
 import Body from "./mainParts/Body"
 import Footer from "./mainParts/Footer"
-//import LoadingScreen from "./LoadingScreen";
-
+import LoadingScreen from "./OtherParts/LoadingScreen";
 import WordSlider from "./OtherParts/WordSlider";
 
+import coverImage from "../src/assets/CoverImage/Cover2.jpg";
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
     "Frontend",
     "Backend"
   ];
+
+  const [loading, setImageLoaded] = useState(true);
 
    //#region singel observer Observer innehåll som ska in från höger
   const observer = new IntersectionObserver(
@@ -36,11 +39,20 @@ function App() {
   );
   //#endregion
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = coverImage; // samma bild som i CSS
+    img.onload = () => setImageLoaded(false);
+    img.onerror = () => setImageLoaded(false);
+}, []);
+
+  if (loading) return <LoadingScreen />;
+
 
   return (
     <>
       <Navbar observer={observer}/>
-      {<div className="space">
+      {!loading && (<div className="space" style={{backgroundImage : `url(${coverImage})`,  backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center center"}}>
         <div className="d-flex justify-content-center flex-column align-items-center vh-100 welcome opacityBefore">
           <h1 className="welcomeText">Welcome!</h1>
           <WordSlider  phrases={phrases} typingSpeed={60} deletingSpeed={50} delayAfterTyped={1500} delayBeforeStart={500}/>
@@ -50,7 +62,7 @@ function App() {
             </svg>   
           </a>
         </div>
-      </div>}
+      </div>)}
       <Body observer={observer}/>
       <Footer/>
     </>
