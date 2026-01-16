@@ -437,6 +437,11 @@ nav a:hover {
     margin-top: 0px;
   }
 }
+
+#mail{
+  text-decoration: none;
+  color: var(--TextColor);
+}
 /*#endregion*/
 
 /*#region rubrikerna till vänster*/
@@ -450,6 +455,9 @@ nav a:hover {
   color: var(--TextColor);
 }
 
+.text-justify {
+  text-align: justify;
+}
 /*#endregion*/
 
 /*#region ändrar färg på icons från bootstrap*/
@@ -543,7 +551,7 @@ footer {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.opacityAfter {
+.opacityBefore.opacityAfter {
   opacity: 1;
   transform: translateX(0px);
   

@@ -7,8 +7,8 @@ function Footer() {
         <footer className="spa-footer">            
             <div className="row">
                 <div className="col-4">
-                    <h3 className="d-flex justify-content-center">Daniel Frisk</h3>
-                    <p className="d-flex justify-content-center">Full Stack Developer | Reddy for hiring</p>
+                    <h3 className="d-flex justify-content-center ms-1 m-md-0">Daniel Frisk</h3>
+                    <p className="d-flex justify-content-center m-1 text-justify">Full Stack Developer | Reddy for hiring</p>
                 </div>
 
                 <div className="col-4 poweredBy">
@@ -52,7 +52,7 @@ function Footer() {
                 </div>
 
                 <div className="col-4 ">
-                    <div className="row">
+                    <div className="row mb-4 mb-md-0">
                         <h3 className="d-flex justify-content-center">Socilas</h3>
                     </div>
                     <div className="row">
