@@ -287,6 +287,8 @@ nav a:hover {
 
 .infoText {
   color: var(--TextColor);
+  line-height: 1.6; /* Standard för bra läsbarhet är mellan 1.5 och 1.7 */
+  margin-bottom: 0.8rem; /* Ger lite luft mellan de olika styckena */
 }
 
 .headerWhite{
@@ -451,6 +453,38 @@ nav a:hover {
 /*Färg för texten hos rubrikerna till vänster*/
 .socialMediaText {
   color: var(--TextColor);
+  
+}
+
+.socialMedia {
+  display: flex;          /* Gör att barn-elementen hamnar på rad */
+  align-items: center;    /* Centrerar ikon och text vertikalt */
+  white-space: nowrap;    /* Förhindrar radbrytning av texten inuti */
+  width: fit-content;
+}
+
+.socialMediaTextDisplay{
+  display: block;
+  
+
+}
+
+@media (max-width: 298px) {
+
+  .socialMediaTextDisplay{
+    display: none;
+  }
+
+  .socialMedia{
+    display: inline-flex;
+  }
+
+  .socialOl{
+    display: flex;
+    justify-content: space-evenly !important;
+    flex-direction: row !important;
+  }
+  
 }
 
 .text-justify {
