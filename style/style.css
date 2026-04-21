@@ -97,6 +97,9 @@ body.loading-active {
   color: var(--TextColor);
 }
 /*#endregion*/
+#homeMargine{
+  padding-top: 20px;
+}
 
 /*#region overlay space*/
 .space:before {

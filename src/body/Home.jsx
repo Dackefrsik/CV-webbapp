@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import profilePicture from "../assets/Profilbild.jpg"
 
-
 function Home({observer}) {
     const [currentDate, setCurrentDate] = useState("");
     const imgRef = useRef(null);
@@ -43,8 +42,11 @@ function Home({observer}) {
 
     return (
         <>
-            <div className="bgProfilePicture p-2">
-                <div className="container" id="Home">
+            <div className="bgProfilePicture p-2" id="Home">
+                <div id="homeMargine">
+
+                </div>
+                <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-5 col-lg-4 col-xl-3">
                             <div className="d-flex justify-content-center justify-content-md-start profile-margin mt-sm-2 mt-md-5 mb-sm-2 mb-md-0 opacityBefore">
@@ -113,7 +115,5 @@ function Home({observer}) {
         </>
     )
 }
-
-
 
 export default Home;
