@@ -10,6 +10,7 @@ import todoapp from "../assets/Mockups/todoapp.png"
 import tournamentwebbapp from "../assets/Mockups/tournamentwebbapp.png"
 import Cuppsatts from "../assets/Mockups/Omslag examensarbete.png"
 import artistino from "../assets/Mockups/artistino.jpg"
+import sudoku from "../assets/Mockups/sudoku.png"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
@@ -17,6 +18,10 @@ function Projects({ observer }) {
     const techniques = [
         {name : "Web Development"},
         {name : "App Development"},
+        {name : "JavaScript"},
+        {name : "React.js"},
+        {name : "Tailwind css"},
+        {name : "Bootstrap"},
         {name : "Api"},
         {name : "Java"},
         {name : "Python"},
@@ -33,7 +38,8 @@ function Projects({ observer }) {
         {name : "To-Do app", link : "https://github.com/Dackefrsik/To-do-app", img : todoapp, techniques : ["App Development", "TypeScript", "React-native"]},
         {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
         {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]},
-        {name : "Artistino discord bot", link : "https://github.com/Dackefrsik/Artistino-discord-bot", img : artistino, techniques : ["Python", "Api"]}
+        {name : "Artistino discord bot", link : "https://github.com/Dackefrsik/Artistino-discord-bot", img : artistino, techniques : ["Python", "Api"]},
+        {name: "Sudoku", link : "https://github.com/Dackefrsik/Suduko", img : sudoku, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Tailwind css"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);

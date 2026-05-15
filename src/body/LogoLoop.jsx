@@ -22,6 +22,7 @@ const techLogos = [
     { node: <img src = "https://img.shields.io/badge/REST%20API-009688?style=for-the-badge&logo=api&logoColor=white"/>, title : "Rest API"},
     { node: <img src = "https://img.shields.io/badge/PlantUML-0D597F?style=for-the-badge&logo=uml&logoColor=white"/>, title : "PlantUml"},
     { node: <img src = "https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> , title : "TypeScript"},
+    { node: <img src = "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>, title: "Tailwind CSS"}
 ];
 
 export function App() {

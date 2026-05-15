@@ -26,6 +26,7 @@ function Teknikals({ observer }) {
     {src : "https://img.shields.io/badge/REST%20API-009688?style=for-the-badge&logo=api&logoColor=white", alt : "Rest API"},
     {src : "https://img.shields.io/badge/PlantUML-0D597F?style=for-the-badge&logo=uml&logoColor=white", alt : "PlantUml"},
     {src : "https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white", alt : "TypeScript"},
+    {src: "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white", alt: "Tailwind CSS"}
   ]
 
 
