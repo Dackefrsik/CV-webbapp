@@ -1,5 +1,7 @@
 import { useEffect, useState} from "react"
 
+import "../../style/style.css"
+
 import weatherappp from "../assets/Mockups/weateherapp.png"
 import tennisbooking from "../assets/Mockups/tennnisbooking.png"
 import snakegame from "../assets/Mockups/snakegame.png"
@@ -11,6 +13,7 @@ import tournamentwebbapp from "../assets/Mockups/tournamentwebbapp.png"
 import Cuppsatts from "../assets/Mockups/Omslag examensarbete.png"
 import artistino from "../assets/Mockups/artistino.jpg"
 import sudoku from "../assets/Mockups/sudoku.png"
+import objectdetectionmodel from "../assets/Mockups/Objectdetectionmodel.png"
 
 //Komponent som visar projekt
 function Projects({ observer }) {
@@ -25,7 +28,9 @@ function Projects({ observer }) {
         {name : "Api"},
         {name : "Java"},
         {name : "Python"},
-        {name : "Thesis"}
+        {name : "Thesis"},
+        {name : "Machine Learning"},
+        {name : "Object detection"}
     ]
 
     const Projects = [
@@ -39,11 +44,13 @@ function Projects({ observer }) {
         {name : "Tournament webbapp", link : "https://github.com/Dackefrsik/Tournament-webbapp", img : tournamentwebbapp, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Bootstrap"]},
         {name : "Bachelor's thesis", link : "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1966488&dswid=9917", img: Cuppsatts, techniques : ["Thesis"]},
         {name : "Artistino discord bot", link : "https://github.com/Dackefrsik/Artistino-discord-bot", img : artistino, techniques : ["Python", "Api"]},
-        {name: "Sudoku", link : "https://github.com/Dackefrsik/Suduko", img : sudoku, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Tailwind css"]}
+        {name: "Sudoku", link : "https://github.com/Dackefrsik/Suduko", img : sudoku, techniques : ["Web Development", "HTML & CSS", "JavaScript", "React.js", "Tailwind css"]},
+        {name: "Object detection model for Rock paper scissor", link : "https://github.com/Dackefrsik/Object-Detection-Model", img : objectdetectionmodel, techniques : ["Python", "Machine Learning", "Object detection"]}
     ]
 
     const [filteredProjects, setFilteredProjects] = useState(Projects);
     const [selectedTechnique, setSelectedTechnique] = useState(null);
+    const [isSelecte, setIsSelected] = useState(false)
 
     /*#region useefect som kör animationer*/
     useEffect(() => {
@@ -95,19 +102,41 @@ function Projects({ observer }) {
     }
 
     function filterProjects(technique) {
-    if (selectedTechnique === technique) {
-        // Om samma knapp trycks igen → visa alla
-        setFilteredProjects(Projects);
-        setSelectedTechnique(null);
-    } else {
-        // Annars filtrera
-        const filtered = Projects.filter(project =>
-            project.techniques.includes(technique)
-        );
-        setFilteredProjects(filtered);
-        setSelectedTechnique(technique);
+        if (selectedTechnique === technique) {
+            // Om samma knapp trycks igen → visa alla
+            setFilteredProjects(Projects);
+            setSelectedTechnique(null);
+        } else {
+            // Annars filtrera
+            const filtered = Projects.filter(project =>
+                project.techniques.includes(technique)
+            );
+            setFilteredProjects(filtered);
+            setSelectedTechnique(technique);
+        }
     }
-}
+
+    function createDropDown(){
+        return(
+           <div className="rounded-2 bg-light">
+                <select className="p-2 border-0 custom-select" onChange={(e) => filterProjects(e.target.value)} onClick={() =>(setIsSelected(!isSelecte))}>
+                {createOptions()}
+                
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class={`bi ${isSelecte ? "rotated" : "bi-caret-down-fill"} `} viewBox="0 0 16 16">
+                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                </svg>
+            </div>
+        )
+    }
+
+    function createOptions(){
+        return techniques.map((technique, i) => (
+            <option key={i} value={technique.name} className="rounded-2">
+                {technique.name}
+            </option>
+        ))
+    }
 
     return (
         <div id="Projects" className="container-fluid bgProfilePicture">
@@ -116,8 +145,9 @@ function Projects({ observer }) {
                     <p className="textColor fs-2">Projects</p>
                 </div>
             </div>
-            <div className="row opacityBefore justify-content-center">
-                {createButtons()}
+            <div className="row opacityBefore justify-content-center ">
+                <div className="d-none d-md-flex">{createButtons()}</div>
+                <div className="d-flex d-md-none justify-content-center">{createDropDown()}</div>
             </div>
             <div className="row ">
                 <div className="p-2 ps-4 pe-4 d-flex justify-content-evenly flex-wrap">

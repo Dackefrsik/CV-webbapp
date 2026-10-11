@@ -267,16 +267,26 @@ nav a:hover {
     margin-top: 50vh;
   }
 
+  nav a {
+    color: var(--TextColor)
+  }
+
   .navBackground{
-  background-color: var(--Primary);
+  background-color: var(--Secondary);
   }
 
   .buttonDiv{
     background-color: var(--Accentfärg);
   }
 
+  .navbar-container {
+    position: relative;
+}
+
+
   .custom-toggler {
     position: relative;
+    z-index: 1050;
     width: 4rem;
     height: 2.8rem;
     background-color: var(--Accentfärg);
@@ -286,6 +296,8 @@ nav a:hover {
     display: block;
     overflow: hidden;
   }
+
+  
 }
 
 .infoText {
@@ -320,12 +332,16 @@ nav a:hover {
 }
 
 .hamburger-hidden-on-scroll.show {
-  top: 50%;                 /* Behåll halvvägs ner */             /* Flytta horisontellt till mitten */
+  top: 10%;                 /* Behåll halvvägs ner */             /* Flytta horisontellt till mitten */
   right: 0;
-  margin-right: 0.5rem;
   transform: translateY(-50%) translateX(-50%);  /* Vertikalt centrerad, horisontellt i mitten */
   animation: bounceInRight 0.6s forwards;
   opacity: 1;
+}
+
+.hamburger-hidden-on-scroll.show.menu-open {
+    animation: none;
+    transform: translateY(-50%);
 }
 
 .navbar-collapse {
@@ -956,3 +972,19 @@ footer {
   font-size: 0.8rem; /* standard små skärmar */
 }
 /*#endregion*/
+
+
+.custom-select {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+}
+
+.bi-arrow-down-fill {
+  transition: transform;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}

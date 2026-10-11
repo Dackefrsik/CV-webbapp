@@ -124,8 +124,8 @@ function Navbar({observer}) {
                             ${(isHamburgerVisibleByScroll || isMenuOpen) ? "show" : "hide"}
                             `}
                             type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup"
+                            /* data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" */
                             aria-controls="navbarNavAltMarkup"
                             aria-expanded={isMenuOpen} // Koppla till isMenuOpen state
                             aria-label="Toggle navigation"
@@ -144,7 +144,7 @@ function Navbar({observer}) {
                                 </ul>
                             <div className="me-md-5 navbar-nav">
                                 
-                                <ul className="d-md-flex flex-row mt-3 m-auto mb-0 navBackground rounded-4 p-2 p-md-o">
+                                <ul className="d-md-flex flex-row mt-3 m-auto mb-0 navBackground rounded-start-2 p-2 p-md-o">
                                     <li>
                                         <a className="active m-2" aria-current="page" href="#Home" onClick={toggleMenu}>Home</a>
                                     </li>
