@@ -103,7 +103,7 @@ function Projects({ observer }) {
 
     function filterProjects(technique) {
         if (technique === "All Projects" || selectedTechnique === technique) {
-            // Om samma knapp trycks igen → visa alla
+            // Om samma knapp trycks igen → visa alla eller All Projects väljs i listan
             setFilteredProjects(Projects);
             setSelectedTechnique(null);
         } else {
