@@ -134,9 +134,12 @@ function Projects({ observer }) {
     }
 
     function createOptions(){
-        return techniques.map((technique, i) => (
-            <option key={i} value={technique.name} className="rounded-2">
-                {technique.name}
+
+        let optionList = [{name : "All Projects"}, ...techniques]
+
+        return optionList.map((option, i) => (
+            <option key={i} value={option.name} className="rounded-2">
+                {option.name}
             </option>
         ))
     }

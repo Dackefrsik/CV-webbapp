@@ -63,8 +63,6 @@ function Navbar({observer}) {
                 if (windowHeight > scrollThreshold) {
                     console.log("ses")
                     setHamburgerVisibleByScroll(true); // Visa hamburgaren
-                    document.querySelector('.hamburger-hidden-on-scroll').classList.add('show');
-
                 } else {
                     setHamburgerVisibleByScroll(false); // Dölj hamburgaren
                     // Stäng även menyn om den var öppen och vi skrollar tillbaka upp
@@ -75,7 +73,6 @@ function Navbar({observer}) {
                             menuButton.current.setAttribute("aria-expanded", "false");
                         }
                     }
-                    document.querySelector('.hamburger-hidden-on-scroll').classList.remove('show');
 
                 }
             } else {
