@@ -119,8 +119,11 @@ function Projects({ observer }) {
     function createDropDown(){
         return(
            <div className="rounded-2 bg-light">
-                <select className="p-2 border-0 custom-select" onChange={(e) => filterProjects(e.target.value)} onClick={() =>(setIsSelected(!isSelecte))}>
-                {createOptions()}
+                <select className="p-2 border-0 custom-select" 
+                    onChange={(e) => filterProjects(e.target.value)} 
+                    onClick={() =>(setIsSelected(!isSelecte))}
+                    onBlur={() => setIsSelected(false)}>
+                    {createOptions()}
                 
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class={`bi ${isSelecte ? "rotated" : "bi-caret-down-fill"} `} viewBox="0 0 16 16">
@@ -145,8 +148,8 @@ function Projects({ observer }) {
                     <p className="textColor fs-2">Projects</p>
                 </div>
             </div>
-            <div className="row opacityBefore justify-content-center ">
-                <div className="d-none d-md-flex">{createButtons()}</div>
+            <div className="row opacityBefore">
+                <div className="d-none d-md-flex justify-content-center">{createButtons()}</div>
                 <div className="d-flex d-md-none justify-content-center">{createDropDown()}</div>
             </div>
             <div className="row ">
